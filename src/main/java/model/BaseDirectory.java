@@ -1,15 +1,15 @@
 package model;
 
-public abstract class BaseClass {
+public abstract class BaseDirectory {
     private int id;
     private String name;
     private boolean defDirectory;
 
-    public BaseClass(){
+    public BaseDirectory(){
 
     }
 
-    BaseClass(int id, String name, boolean defDirectory) {
+    BaseDirectory(int id, String name, boolean defDirectory) {
         this.id = id;
         this.name = name;
         this.defDirectory = defDirectory;
@@ -41,7 +41,7 @@ public abstract class BaseClass {
 
     @Override
     public String toString() {
-        return "BaseClass{" +
+        return "BaseDirectory{" +
                 "id=" + id +
                 ", word='" + name + '\'' +
                 ", defaultKeyword=" + defDirectory +
