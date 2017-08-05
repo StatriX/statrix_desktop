@@ -1,8 +1,9 @@
 package model;
 
-public class Keyword extends BaseDirectory {
+public class Keyword extends CommonDirectory {
 
-    public Keyword(int id, String word, boolean defaultKeyword) {
+
+    public Keyword(Integer id, Integer personId, String word, boolean defaultKeyword) {
         super(id, word, defaultKeyword);
     }
 

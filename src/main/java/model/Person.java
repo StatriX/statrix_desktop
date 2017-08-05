@@ -1,8 +1,8 @@
 package model;
 
-public class Person extends BaseDirectory {
+public class Person extends CommonDirectory {
 
-    public Person(int id, String name, boolean defaultPerson) {
+    public Person(Integer id, String name, boolean defaultPerson) {
         super(id, name, defaultPerson);
     }
 

@@ -2,12 +2,13 @@ package repository;
 
 import model.Person;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface PersonRepository {
-    boolean save(Person person);
+    void save(Person person);
 
-    boolean delete(int id);
+    void delete(int id);
 
     List<Person> getAll();
 }

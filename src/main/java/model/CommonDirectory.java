@@ -1,25 +1,25 @@
 package model;
 
-public abstract class BaseDirectory {
-    private int id;
+public abstract class CommonDirectory {
+    private Integer id;
     private String name;
     private boolean defDirectory;
 
-    public BaseDirectory(){
+    public CommonDirectory(){
 
     }
 
-    BaseDirectory(int id, String name, boolean defDirectory) {
+    CommonDirectory(Integer id, String name, boolean defDirectory) {
         this.id = id;
         this.name = name;
         this.defDirectory = defDirectory;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public abstract class BaseDirectory {
 
     @Override
     public String toString() {
-        return "BaseDirectory{" +
+        return "CommonDirectory{" +
                 "id=" + id +
                 ", word='" + name + '\'' +
                 ", defaultKeyword=" + defDirectory +
