@@ -4,12 +4,13 @@ import model.Person;
 import repository.PersonRepository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class InMemoryPersonRepository implements PersonRepository {
-    private HashMap<Integer, Person> repository = new HashMap<>();
+    private Map<Integer, Person> repository = new ConcurrentHashMap<>();
     private AtomicInteger counter = new AtomicInteger(0);
 
     {

@@ -9,5 +9,5 @@ public interface KeywordService {
 
     void delete(int id);
 
-    List<Keyword> getAll();
+    List<Keyword> getAllByPersonId(Integer id);
 }

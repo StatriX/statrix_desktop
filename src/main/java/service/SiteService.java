@@ -5,9 +5,9 @@ import model.Site;
 import java.util.List;
 
 public interface SiteService {
-    boolean save(Site site);
+    void save(Site site);
 
-    boolean delete(int id);
+    void delete(int id);
 
     List<Site> getAll();
 }

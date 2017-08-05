@@ -6,7 +6,7 @@ import repository.mock.InMemoryPersonRepository;
 
 import java.util.List;
 
-public class PersonServiceImpl implements PersonRepository {
+public class PersonServiceImpl implements PersonService {
     private PersonRepository personRepository = new InMemoryPersonRepository();
 
     @Override

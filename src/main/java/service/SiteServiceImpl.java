@@ -6,7 +6,7 @@ import repository.mock.InMemorySiteRepository;
 
 import java.util.List;
 
-public class SiteServiceImpl implements SiteRepository {
+public class SiteServiceImpl implements SiteService {
     private SiteRepository siteRepository = new InMemorySiteRepository();
 
     @Override

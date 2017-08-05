@@ -1,16 +1,16 @@
 package repository.mock;
 
-import model.Person;
 import model.Site;
 import repository.SiteRepository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class InMemorySiteRepository implements SiteRepository {
-    private HashMap<Integer, Site> repository = new HashMap<>();
+    private Map<Integer, Site> repository = new ConcurrentHashMap<>();
     private AtomicInteger counter = new AtomicInteger(0);
 
     {

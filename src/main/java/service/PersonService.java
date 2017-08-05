@@ -5,9 +5,9 @@ import model.Person;
 import java.util.List;
 
 public interface PersonService {
-    boolean save(Person person);
+    void save(Person person);
 
-    boolean delete(int id);
+    void delete(int id);
 
     List<Person> getAll();
 }

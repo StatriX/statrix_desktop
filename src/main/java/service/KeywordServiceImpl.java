@@ -2,12 +2,12 @@ package service;
 
 import model.Keyword;
 import repository.KeywordRepository;
-import repository.mock.InMemoryKeyworRepository;
+import repository.mock.InMemoryKeywordRepository;
 
 import java.util.List;
 
 public class KeywordServiceImpl implements KeywordService {
-    private KeywordRepository keywordRepository = new InMemoryKeyworRepository();
+    private KeywordRepository keywordRepository = new InMemoryKeywordRepository();
 
     @Override
     public void save(Keyword keyword) {
@@ -20,7 +20,7 @@ public class KeywordServiceImpl implements KeywordService {
     }
 
     @Override
-    public List<Keyword> getAll() {
-        return keywordRepository.getAll();
+    public List<Keyword> getAllByPersonId(Integer id) {
+        return keywordRepository.getAllByPersonId(id);
     }
 }

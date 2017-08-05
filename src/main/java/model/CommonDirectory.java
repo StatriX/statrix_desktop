@@ -40,12 +40,12 @@ public abstract class CommonDirectory {
     }
 
     public boolean isNew() {
-        return id != null;
+        return id == null;
     }
 
     @Override
     public String toString() {
-        return "CommonDirectory{" +
+        return this.getClass().getSimpleName() + "{" +
                 "id=" + id +
                 ", word='" + name + '\'' +
                 ", defaultKeyword=" + defDirectory +

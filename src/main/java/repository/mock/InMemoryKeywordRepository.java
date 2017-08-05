@@ -4,13 +4,14 @@ import model.Keyword;
 import repository.KeywordRepository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
-public class InMemoryKeyworRepository implements KeywordRepository {
-    private Map<Integer, Keyword> repository = new HashMap<>();
+public class InMemoryKeywordRepository implements KeywordRepository {
+    private Map<Integer, Keyword> repository = new ConcurrentHashMap<>();
     private AtomicInteger counter = new AtomicInteger(0);
 
     {
@@ -40,7 +41,10 @@ public class InMemoryKeyworRepository implements KeywordRepository {
     }
 
     @Override
-    public List<Keyword> getAll() {
-        return new ArrayList<>(repository.values());
+    public List<Keyword> getAllByPersonId(Integer id) {
+        return new ArrayList<>(repository.values())
+                .stream()
+                .filter( k -> k.getPersonId().equals(id))
+                .collect(Collectors.toList());
     }
 }

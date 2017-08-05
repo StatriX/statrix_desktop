@@ -1,7 +1,7 @@
 package model;
 
 public class User {
-    private int id;
+    private Integer id;
     private String name;
     private String password;
     private String email;
@@ -10,7 +10,15 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String password, String email, boolean administrator) {
+    public User(String name, String password, String email, boolean administrator) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.administrator = administrator;
+    }
+
+
+    public User(Integer id, String name, String password, String email, boolean administrator) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -19,11 +27,11 @@ public class User {
     }
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -57,6 +65,10 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isNew() {
+        return id == null;
     }
 
     @Override
