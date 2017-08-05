@@ -5,9 +5,9 @@ import model.Keyword;
 import java.util.List;
 
 public interface KeywordRepository {
-    boolean save(Keyword keyword);
+    void save(Keyword keyword);
 
-    boolean delete(int id);
+    void delete(int id);
 
     List<Keyword> getAll();
 }

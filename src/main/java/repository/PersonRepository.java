@@ -2,7 +2,6 @@ package repository;
 
 import model.Person;
 
-import java.util.Collection;
 import java.util.List;
 
 public interface PersonRepository {
