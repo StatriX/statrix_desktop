@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.administration.sites.SitesManageController">
+    <children>
+        <GridPane alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints valignment="BOTTOM" vgrow="ALWAYS" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" text="Список сайтов" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </Label>
+                <ListView editable="true" focusTraversable="false" maxWidth="500.0" minWidth="360.0" nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </GridPane.margin>
+                </ListView>
+                <AnchorPane maxWidth="540.0" minWidth="300.0" GridPane.rowIndex="2">
+                    <children>
+                        <TextField focusTraversable="false" promptText="Добавить сайт" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="120.0">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </TextField>
+                        <Button layoutX="268.0" maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Добавить" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <GridPane.margin>
+                        <Insets />
+                    </GridPane.margin>
+                </AnchorPane>
+                <AnchorPane maxWidth="540.0" minWidth="300.0" GridPane.rowIndex="3">
+                    <children>
+                        <Button minWidth="100.0" mnemonicParsing="false" text="Удалить" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

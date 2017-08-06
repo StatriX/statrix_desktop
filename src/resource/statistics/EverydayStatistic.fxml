@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.view.confirmation.ConfirmationController"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox alignment="CENTER">
+        <HBox>
+            <ChoiceBox prefWidth="150.0">
+                <HBox.margin>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                </HBox.margin>
+            </ChoiceBox>
+            <Label text="с">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets bottom="20.0" left="20.0" top="20.0"/>
+                </HBox.margin>
+            </Label>
+            <DatePicker focusTraversable="false" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="20.0" top="20.0"/>
+                </HBox.margin>
+            </DatePicker>
+            <Label text="по">
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets bottom="20.0" left="20.0" top="20.0"/>
+                </HBox.margin>
+            </Label>
+            <DatePicker focusTraversable="false" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="20.0" left="5.0" right="20.0" top="20.0"/>
+                </HBox.margin>
+            </DatePicker>
+            <Button mnemonicParsing="false" text="Применить" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets bottom="17.5" left="17.5" right="20.0" top="17.5"/>
+                </HBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0"/>
+                </font>
+            </Button>
+        </HBox>
+        <TableView focusTraversable="false" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="740.0"
+                   VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Дата"/>
+                <TableColumn prefWidth="75.0" text="Личность1"/>
+                <TableColumn prefWidth="75.0" text="Личность2"/>
+                <TableColumn prefWidth="75.0" text="Личность3"/>
+            </columns>
+            <VBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0"/>
+            </VBox.margin>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <Button fx:id="cancelButton" focusTraversable="false" mnemonicParsing="false"
+                onAction="#closeModalWindow" text="Закрыть">
+            <VBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0"/>
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="15.0"/>
+            </font>
+        </Button>
+    </VBox>
+</AnchorPane>

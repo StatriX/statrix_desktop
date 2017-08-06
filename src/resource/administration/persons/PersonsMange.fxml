@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.administration.persons.PersonsMangeController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints minHeight="100.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <ListView focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" />
+               </GridPane.margin>
+            </ListView>
+            <HBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="2">
+               <children>
+                  <Button minWidth="178.0" mnemonicParsing="false" onMouseClicked="#addEditPerson" text="Добавить личность" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button minWidth="178.0" mnemonicParsing="false" onMouseClicked="#addEditPerson" text="Редактировать личность" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button minWidth="178.0" mnemonicParsing="false" text="Удалить личность" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="Выбор личности">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
