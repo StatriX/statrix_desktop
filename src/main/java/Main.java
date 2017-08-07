@@ -78,8 +78,9 @@ public class Main {
         System.out.println(userService.getAll());
 
         //test Statistic;
+        System.out.println();
         System.out.println("---test Statistic");
-        System.out.print("-print full statistics: ");
+        System.out.print("-print full statistics: \n");
 
         List<String> tempSiteNameList = siteService.getAll()
                 .stream()
@@ -96,9 +97,6 @@ public class Main {
         Collections.sort(tempPersonNameList);
         Collections.sort(tempSiteNameList);
 
-        System.out.println(tempSiteNameList.size());
-        System.out.println(tempPersonNameList.size());
-        System.out.println(tempStatisticService.size());
 
         for(int i = 0; i < tempSiteNameList.size(); i++) {
             for(int j = 0; j < tempPersonNameList.size(); j++) {
