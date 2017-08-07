@@ -2,6 +2,7 @@ package service;
 
 import model.Site;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface SiteService {
