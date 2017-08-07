@@ -20,10 +20,10 @@ public class StatisticController implements ModalWindows {
 
         if (showCommonStatistic.isFocused()) {
             fileName = "/statistics/CommonStatistic.fxml";
+            onShowModalWindow(actionEvent,fileName, "Общая статистика");
         } else if (showEverydayStatistic.isFocused()) {
             fileName = "/statistics/EverydayStatistic.fxml";
+            onShowModalWindow(actionEvent, fileName, "Ежедневная статистика");
         }
-
-        onShowModalWindow(actionEvent, fileName);
     }
 }

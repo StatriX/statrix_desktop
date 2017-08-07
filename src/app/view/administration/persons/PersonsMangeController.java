@@ -8,6 +8,6 @@ public class PersonsMangeController implements ModalWindows {
 
     @FXML
     public void addEditPerson(MouseEvent mouseEvent) {
-        onShowModalWindow(mouseEvent, "/administration/persons/AddEditPerson.fxml");
+        onShowModalWindow(mouseEvent, "/administration/persons/AddEditPerson.fxml", "Добавление/редактирование личности");
     }
 }

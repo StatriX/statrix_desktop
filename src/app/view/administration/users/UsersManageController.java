@@ -8,6 +8,6 @@ public class UsersManageController implements ModalWindows {
 
     @FXML
     public void addEditUser(MouseEvent mouseEvent) {
-        onShowModalWindow(mouseEvent, "/administration/users/AddEditUser.fxml");
+        onShowModalWindow(mouseEvent, "/administration/users/AddEditUser.fxml", "Регистрация/редактирование пользователя");
     }
 }

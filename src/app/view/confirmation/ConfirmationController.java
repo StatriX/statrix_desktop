@@ -1,5 +1,6 @@
 package app.view.confirmation;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -10,7 +11,7 @@ public class ConfirmationController implements ManageConfirmation {
 
     @FXML
     public void confirmAction() {
-        System.exit(0);
+        Platform.exit();
     }
 
     public void closeModalWindow() {

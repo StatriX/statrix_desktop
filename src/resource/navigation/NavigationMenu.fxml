@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.NavigationMenuController">
+<HBox fx:id="updateGeneralWindow" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.NavigationMenuController">
     <children>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" stylesheets="/navigation/LabelMenuStyle.css">
         <items>
           <AnchorPane maxWidth="200.0" minWidth="200.0" prefWidth="200.0">
                <children>
@@ -19,17 +20,20 @@
                   </Label>
                   <VBox layoutX="44.0" layoutY="126.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Label layoutX="44.0" layoutY="126.0" onMouseClicked="#showWindowStatic" text="Статистика" underline="true">
+                        <Label fx:id="statistic" focusTraversable="false" layoutX="44.0" layoutY="126.0" onMousePressed="#showWindowStatic" styleClass="normal_label" stylesheets="/navigation/LabelMenuStyle.css" text="Статистика" underline="true">
                            <font>
                               <Font name="System Bold" size="18.0" />
                            </font>
                            <VBox.margin>
                               <Insets left="10.0" />
                            </VBox.margin>
+                           <effect>
+                              <DropShadow fx:id="normalLabel" color="#9a9a9a" height="0.0" offsetX="3.0" offsetY="2.0" radius="2.0" width="10.0" />
+                           </effect>
                         </Label>
                         <VBox spacing="5.0">
                            <children>
-                              <Label layoutX="64.0" layoutY="189.0" onMouseClicked="#showWindowAdministrationPerson" text="Администрирование">
+                              <Label fx:id="administration" layoutX="64.0" layoutY="189.0" onMouseClicked="#showWindowAdministrationPerson" text="Администрирование">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -37,7 +41,7 @@
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label onMouseClicked="#showWindowAdministrationPerson" text="Личности">
+                              <Label fx:id="persons" onMouseClicked="#showWindowAdministrationPerson" text="Личности">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -45,7 +49,7 @@
                                     <Insets left="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label onMouseClicked="#showWindowAdministrationSites" text="Сайты">
+                              <Label fx:id="sites" onMouseClicked="#showWindowAdministrationSites" text="Сайты">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -53,7 +57,7 @@
                                     <Insets left="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label onMouseClicked="#showWindowAdministrationUsers" text="Пользователи">
+                              <Label fx:id="users" onMouseClicked="#showWindowAdministrationUsers" text="Пользователи">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -71,7 +75,7 @@
                <children>
                   <VBox spacing="10.0" AnchorPane.topAnchor="10.0">
                      <children>
-                        <Label onMouseClicked="#showAboutProgram" text="О программе">
+                        <Label fx:id="aboutProgram" onMouseClicked="#showAboutProgram" text="О программе">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -79,7 +83,7 @@
                               <Insets left="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label onMouseClicked="#showWindowMessageAboutError" text="Сообщить об ошибке">
+                        <Label fx:id="messageAboutError" onMouseClicked="#showWindowMessageAboutError" text="Сообщить об ошибке">
                            <font>
                               <Font size="14.0" />
                            </font>

@@ -5,6 +5,7 @@ import app.view.WindowsNavigator;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -18,6 +19,8 @@ public class MainApp extends Application {
         primaryStage.setMinWidth(800.0);
         primaryStage.setMinHeight(600.0);
         primaryStage.setMaxWidth(1000.0);
+        primaryStage.getIcons().add(new Image("/images/logo/favicon.png"));
+        primaryStage.setResizable(false);
 
         primaryStage.setScene(createScene(loadRootPane()));
 

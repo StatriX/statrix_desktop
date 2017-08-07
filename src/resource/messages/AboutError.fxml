@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.*?>
 <AnchorPane maxWidth="610.0" minHeight="350.0" minWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.messages.AboutErrorController">
    <children>
       <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Отправить" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
