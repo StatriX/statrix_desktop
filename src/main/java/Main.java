@@ -5,6 +5,8 @@ import model.Site;
 import model.User;
 import service.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -77,7 +79,7 @@ public class Main {
         System.out.print("-print: ");
         System.out.println(userService.getAll());
 
-        //test Statistic;
+        //test Statistic general;
         System.out.println();
         System.out.println("---test Statistic");
         System.out.print("-print full statistics: \n");
@@ -104,6 +106,15 @@ public class Main {
             }
             System.out.println();
         }
+
+        // test statistic by period
+        List<LocalDate> tempLocalDate = new ArrayList<>();
+        for(int i = 1; i < 15; i++) {
+            tempLocalDate.add(LocalDate.of(2017,07,i));
+
+        }
+
+
 
     }
 
