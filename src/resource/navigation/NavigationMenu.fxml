@@ -9,7 +9,7 @@
 
 <HBox fx:id="updateGeneralWindow" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.NavigationMenuController">
     <children>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" stylesheets="/navigation/LabelMenuStyle.css">
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
         <items>
           <AnchorPane maxWidth="200.0" minWidth="200.0" prefWidth="200.0">
                <children>
@@ -18,22 +18,19 @@
                         <Font name="System Italic" size="15.0" />
                      </font>
                   </Label>
-                  <VBox layoutX="44.0" layoutY="126.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                  <VBox layoutX="44.0" layoutY="126.0" spacing="20.0" stylesheets="/navigation/LabelMenuStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
                      <children>
-                        <Label fx:id="statistic" focusTraversable="false" layoutX="44.0" layoutY="126.0" onMousePressed="#showWindowStatic" styleClass="normal_label" stylesheets="/navigation/LabelMenuStyle.css" text="Статистика" underline="true">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
+                        <Button id="statisticButton" fx:id="statistic" mnemonicParsing="false" onMouseClicked="#showWindowStatistic" text="Статистика" wrapText="true">
                            <VBox.margin>
-                              <Insets left="10.0" />
+                              <Insets />
                            </VBox.margin>
-                           <effect>
-                              <DropShadow fx:id="normalLabel" color="#9a9a9a" height="0.0" offsetX="3.0" offsetY="2.0" radius="2.0" width="10.0" />
-                           </effect>
-                        </Label>
-                        <VBox spacing="5.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <VBox>
                            <children>
-                              <Label fx:id="administration" layoutX="64.0" layoutY="189.0" onMouseClicked="#showWindowAdministrationPerson" text="Администрирование">
+                              <Label id="selectedAdministration" fx:id="administration" layoutX="64.0" layoutY="189.0" stylesheets="/navigation/LabelMenuStyle.css" text="Администрирование">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -41,63 +38,48 @@
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label fx:id="persons" onMouseClicked="#showWindowAdministrationPerson" text="Личности">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <Button id="buttonMenu" fx:id="persons" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationPerson" text="Личности">
                                  <VBox.margin>
                                     <Insets left="30.0" />
                                  </VBox.margin>
-                              </Label>
-                              <Label fx:id="sites" onMouseClicked="#showWindowAdministrationSites" text="Сайты">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              </Button>
+                              <Button id="buttonMenu" fx:id="sites" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationSites" text="Сайты">
                                  <VBox.margin>
                                     <Insets left="30.0" />
                                  </VBox.margin>
-                              </Label>
-                              <Label fx:id="users" onMouseClicked="#showWindowAdministrationUsers" text="Пользователи">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              </Button>
+                              <Button id="buttonMenu" fx:id="users" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationUsers" text="Пользователи">
                                  <VBox.margin>
                                     <Insets left="30.0" />
                                  </VBox.margin>
-                              </Label>
+                              </Button>
                            </children>
                         </VBox>
                      </children>
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane maxHeight="180.0" maxWidth="200.0" minHeight="180.0" minWidth="200.0" prefHeight="180.0" prefWidth="200.0">
+          <AnchorPane maxHeight="180.0" maxWidth="200.0" minHeight="180.0" minWidth="200.0" prefHeight="180.0" prefWidth="200.0" stylesheets="/navigation/LabelMenuStyle.css">
                <children>
-                  <VBox spacing="10.0" AnchorPane.topAnchor="10.0">
+                  <VBox AnchorPane.topAnchor="10.0">
                      <children>
-                        <Label fx:id="aboutProgram" onMouseClicked="#showAboutProgram" text="О программе">
+                        <Button id="buttonMenu" fx:id="aboutProgram" mnemonicParsing="false" onMouseClicked="#showAboutProgram" text="О программе">
                            <font>
                               <Font size="14.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Label fx:id="messageAboutError" onMouseClicked="#showWindowMessageAboutError" text="Сообщить об ошибке">
+                        </Button>
+                        <Button id="buttonMenu" fx:id="messageAboutError" mnemonicParsing="false" onMouseClicked="#showWindowMessageAboutError" text="Сообщить об ошибке">
                            <font>
                               <Font size="14.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        </Button>
                      </children>
                   </VBox>
-                  <Label fx:id="exitLabel" onMouseClicked="#onExitLabelFromWindow" text="Выход из программы" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+                  <Button id="exitButton" fx:id="exitButton" layoutX="17.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#onExitButtonFromWindow" text="Выход из программы">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Label>
+                  </Button>
                </children>
             </AnchorPane>
         </items>
