@@ -1,5 +1,7 @@
 package repository.mock;
 
+import model.GeneralStatistic;
+import model.PeriodicalStatistic;
 import repository.StatisticRepository;
 
 import java.time.LocalDate;
@@ -11,34 +13,26 @@ public class InMemoryStatisticRepository implements StatisticRepository {
 
 
     @Override
-    public Map<String, Map<String, Integer>> generalStatistic(List<String> site, List<String> person) {
-        Map<String, Map<String, Integer>> generalStatisticMap = new HashMap<>();
+    public Map<GeneralStatistic, Integer> generalStatistic(List<String> site, List<String> person) {
+        Map<GeneralStatistic, Integer> generalStatisticMap = new TreeMap<>();
         for(String strSite : site) {
-            Map<String, Integer> tempMap = new HashMap<>();
-
             for(String strPerson : person) {
-
-                tempMap.put(strPerson,  new Random().nextInt((MAX - MIN) + 1) + MIN);
+                generalStatisticMap.put(new GeneralStatistic(strSite, strPerson),  new Random().nextInt((MAX - MIN) + 1) + MIN);
             }
-            generalStatisticMap.put(strSite, tempMap);
         }
 
         return generalStatisticMap;
     }
 
     @Override
-    public Map<LocalDate, Map<String, Integer>> statisticByPeriod(String siteName, List<LocalDate> dates, List<String> person) {
-        Map<LocalDate, Map<String, Integer>> mapMap = new HashMap<>();
-        for(LocalDate datesTmp : dates) {
-            Map<String, Integer> tempMap = new HashMap<>();
-
+    public Map<PeriodicalStatistic, Integer> statisticByPeriod(String siteName, LocalDate beginDate, LocalDate endDate, List<String> person) {
+        Map<PeriodicalStatistic, Integer> statisticByPeriodMap = new TreeMap<>();
+        for(; beginDate.isBefore(endDate); beginDate = beginDate.plusDays(1)) {
             for(String strPerson : person) {
-
-                tempMap.put(strPerson,  new Random().nextInt((MAX - MIN) + 1) + MIN);
+                statisticByPeriodMap.put(new PeriodicalStatistic(beginDate, strPerson),  new Random().nextInt((MAX - MIN) + 1) + MIN);
             }
-            mapMap.put(datesTmp, tempMap);
         }
 
-        return mapMap;
+        return statisticByPeriodMap;
     }
 }

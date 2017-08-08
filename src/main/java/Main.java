@@ -1,8 +1,5 @@
 
-import model.Keyword;
-import model.Person;
-import model.Site;
-import model.User;
+import model.*;
 import service.*;
 
 import java.time.LocalDate;
@@ -81,7 +78,7 @@ public class Main {
 
         //test Statistic general;
         System.out.println();
-        System.out.println("---test Statistic");
+        System.out.println("---test generalStatistic");
         System.out.print("-print full statistics: \n");
 
         List<String> tempSiteNameList = siteService.getAll()
@@ -94,27 +91,22 @@ public class Main {
                 .map( p -> p.getName())
                 .collect(Collectors.toList());
 
-        Map<String, Map<String, Integer>> tempStatisticService = statisticService.commonStatistic(tempSiteNameList, tempPersonNameList);
+        Map<GeneralStatistic, Integer> tempStatisticService = statisticService.generalStatistic(tempSiteNameList, tempPersonNameList);
 
-        Collections.sort(tempPersonNameList);
-        Collections.sort(tempSiteNameList);
-
-
-        for(int i = 0; i < tempSiteNameList.size(); i++) {
-            for(int j = 0; j < tempPersonNameList.size(); j++) {
-                System.out.print(tempStatisticService.get(tempSiteNameList.get(i)).get(tempPersonNameList.get(j)) + "\t");
-            }
-            System.out.println();
+        for (Map.Entry<GeneralStatistic, Integer> tempMap : tempStatisticService.entrySet()) {
+            System.out.println(tempMap.getKey().getSiteName() + " " + tempMap.getKey().getPersonName() + " " + tempMap.getValue());
         }
+
 
         // test statistic by period
-        List<LocalDate> tempLocalDate = new ArrayList<>();
-        for(int i = 1; i < 15; i++) {
-            tempLocalDate.add(LocalDate.of(2017,07,i));
+        System.out.println();
+        System.out.println("---test periodical Statistic");
+        System.out.print("-print periodical statistics: \n");
+        Map<PeriodicalStatistic, Integer> periodicalStatisticIntegerMap = statisticService.statisticByPeriod(tempSiteNameList.get(0), LocalDate.of(2017, 07, 01), LocalDate.of(2017, 07, 31), tempPersonNameList);
 
+        for (Map.Entry<PeriodicalStatistic, Integer> tempMap : periodicalStatisticIntegerMap.entrySet()) {
+            System.out.println(tempMap.getKey().getDate() + " " + tempMap.getKey().getPerson() + " " + tempMap.getValue());
         }
-
-
 
     }
 

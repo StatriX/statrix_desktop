@@ -1,5 +1,7 @@
 package service;
 
+import model.GeneralStatistic;
+import model.PeriodicalStatistic;
 import repository.StatisticRepository;
 import repository.mock.InMemoryStatisticRepository;
 
@@ -11,12 +13,12 @@ public class StatisticServiceImp implements StatisticService {
     private StatisticRepository statisticRepository = new InMemoryStatisticRepository();
 
     @Override
-    public Map<String, Map<String, Integer>> commonStatistic(List<String> site, List<String> person) {
+    public Map<GeneralStatistic, Integer> generalStatistic(List<String> site, List<String> person) {
         return statisticRepository.generalStatistic(site, person);
     }
 
     @Override
-    public Map<LocalDate, Map<String, Integer>> statisticByPeriod(String siteName, List<LocalDate> dates, List<String> person) {
-        return statisticRepository.statisticByPeriod(siteName, dates, person);
+    public Map<PeriodicalStatistic, Integer> statisticByPeriod(String siteName, LocalDate beginDate, LocalDate endDate, List<String> person) {
+        return statisticRepository.statisticByPeriod(siteName, beginDate, endDate, person);
     }
 }
