@@ -1,0 +1,33 @@
+#selectedAdministration {
+    -fx-font-size: 18px;
+    -fx-font-weight: normal;
+}
+
+#selectedAdministration_focus {
+    -fx-font-weight: bold;
+}
+
+#statisticButton {
+    -fx-font-size: 18px;
+    -fx-region-background: null;
+}
+
+#statisticButton: focused {
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
+
+#exitButton {
+    -fx-font-size: 15px;
+    -fx-region-background: null;
+}
+
+#buttonMenu {
+    -fx-font-size: 15px;
+    -fx-region-background: null;
+}
+
+#buttonMenu: focused {
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
