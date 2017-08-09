@@ -96,7 +96,7 @@ public class Main {
         }
 
 
-        // test statistic by period
+        // test statistic by period1
         System.out.println();
         System.out.println("---test periodical Statistic");
         System.out.print("-print periodical statistics: \n");
