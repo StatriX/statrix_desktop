@@ -1,4 +1,4 @@
-package model;
+package main.java.model;
 
 public class Keyword extends CommonDirectory {
     private Integer personId;
@@ -14,7 +14,6 @@ public class Keyword extends CommonDirectory {
     }
 
 
-
     public Integer getPersonId() {
         return personId;
     }
@@ -28,6 +27,6 @@ public class Keyword extends CommonDirectory {
     public String toString() {
         return "Keyword{" +
                 "personId=" + personId +
-                '}' + super.toString() ;
+                '}' + super.toString();
     }
 }

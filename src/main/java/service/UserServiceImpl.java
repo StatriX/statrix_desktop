@@ -1,8 +1,8 @@
-package service;
+package main.java.service;
 
-import model.User;
-import repository.UserRepository;
-import repository.mock.InMemoryUserRepository;
+import main.java.model.User;
+import main.java.repository.UserRepository;
+import main.java.repository.mock.InMemoryUserRepository;
 
 import java.util.List;
 

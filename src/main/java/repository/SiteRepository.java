@@ -1,6 +1,6 @@
-package repository;
+package main.java.repository;
 
-import model.Site;
+import main.java.model.Site;
 
 import java.util.List;
 

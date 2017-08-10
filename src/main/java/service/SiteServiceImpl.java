@@ -1,8 +1,8 @@
-package service;
+package main.java.service;
 
-import model.Site;
-import repository.SiteRepository;
-import repository.mock.InMemorySiteRepository;
+import main.java.model.Site;
+import main.java.repository.SiteRepository;
+import main.java.repository.mock.InMemorySiteRepository;
 
 import java.util.List;
 

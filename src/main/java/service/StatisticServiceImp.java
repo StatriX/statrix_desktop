@@ -1,9 +1,9 @@
-package service;
+package main.java.service;
 
-import model.GeneralStatistic;
-import model.PeriodicalStatistic;
-import repository.StatisticRepository;
-import repository.mock.InMemoryStatisticRepository;
+import main.java.model.GeneralStatistic;
+import main.java.model.PeriodicalStatistic;
+import main.java.repository.StatisticRepository;
+import main.java.repository.mock.InMemoryStatisticRepository;
 
 import java.time.LocalDate;
 import java.util.List;

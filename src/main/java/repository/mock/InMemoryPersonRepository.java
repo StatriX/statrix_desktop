@@ -1,11 +1,10 @@
-package repository.mock;
+package main.java.repository.mock;
 
-import model.Person;
-import repository.PersonRepository;
+import main.java.model.Person;
+import main.java.repository.PersonRepository;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -21,7 +20,7 @@ public class InMemoryPersonRepository implements PersonRepository {
 
     @Override
     public void save(Person person) {
-        if(person.getId() == null) {
+        if (person.getId() == null) {
             person.setId(counter.incrementAndGet());
         }
 

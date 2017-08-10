@@ -1,11 +1,10 @@
-package repository.mock;
+package main.java.repository.mock;
 
-import model.Keyword;
-import repository.KeywordRepository;
+import main.java.model.Keyword;
+import main.java.repository.KeywordRepository;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -28,7 +27,7 @@ public class InMemoryKeywordRepository implements KeywordRepository {
 
     @Override
     public void save(Keyword keyword) {
-        if(keyword.isNew()) {
+        if (keyword.isNew()) {
             keyword.setId(counter.incrementAndGet());
         }
 
@@ -44,7 +43,7 @@ public class InMemoryKeywordRepository implements KeywordRepository {
     public List<Keyword> getAllByPersonId(Integer id) {
         return new ArrayList<>(repository.values())
                 .stream()
-                .filter( k -> k.getPersonId().equals(id))
+                .filter(k -> k.getPersonId().equals(id))
                 .collect(Collectors.toList());
     }
 }

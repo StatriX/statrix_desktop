@@ -1,6 +1,6 @@
-package repository;
+package main.java.repository;
 
-import model.Keyword;
+import main.java.model.Keyword;
 
 import java.util.List;
 

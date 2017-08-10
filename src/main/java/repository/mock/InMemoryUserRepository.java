@@ -1,7 +1,7 @@
-package repository.mock;
+package main.java.repository.mock;
 
-import model.User;
-import repository.UserRepository;
+import main.java.model.User;
+import main.java.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class InMemoryUserRepository implements UserRepository {
 
     @Override
     public void save(User user) {
-        if(user.isNew()) {
+        if (user.isNew()) {
             user.setId(counter.incrementAndGet());
         }
 

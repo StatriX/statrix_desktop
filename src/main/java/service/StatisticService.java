@@ -1,7 +1,7 @@
-package service;
+package main.java.service;
 
-import model.GeneralStatistic;
-import model.PeriodicalStatistic;
+import main.java.model.GeneralStatistic;
+import main.java.model.PeriodicalStatistic;
 
 import java.time.LocalDate;
 import java.util.List;

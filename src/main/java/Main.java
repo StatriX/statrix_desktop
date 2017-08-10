@@ -1,6 +1,7 @@
+package main.java;
 
-import model.*;
-import service.*;
+import main.java.model.*;
+import main.java.service.*;
 
 import java.time.LocalDate;
 import java.util.List;

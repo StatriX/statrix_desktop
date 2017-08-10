@@ -1,8 +1,8 @@
-package service;
+package main.java.service;
 
-import model.Keyword;
-import repository.KeywordRepository;
-import repository.mock.InMemoryKeywordRepository;
+import main.java.model.Keyword;
+import main.java.repository.KeywordRepository;
+import main.java.repository.mock.InMemoryKeywordRepository;
 
 import java.util.List;
 

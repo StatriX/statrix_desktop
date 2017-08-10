@@ -1,6 +1,6 @@
-package service;
+package main.java.service;
 
-import model.Person;
+import main.java.model.Person;
 
 import java.util.List;
 

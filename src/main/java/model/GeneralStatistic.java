@@ -1,4 +1,4 @@
-package model;
+package main.java.model;
 
 import java.util.Comparator;
 
@@ -36,7 +36,7 @@ public class GeneralStatistic implements Comparable<GeneralStatistic> {
         GeneralStatistic that = (GeneralStatistic) o;
 
         if (siteName != null ? !siteName.equals(that.siteName) : that.siteName != null) return false;
-        return personName != null ? personName.                                                                                                                                                                                                                                                                                                                                                                                                                                         equals(that.personName) : that.personName == null;
+        return personName != null ? personName.equals(that.personName) : that.personName == null;
     }
 
     @Override

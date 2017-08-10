@@ -1,6 +1,6 @@
-package service;
+package main.java.service;
 
-import model.Site;
+import main.java.model.Site;
 
 import java.util.List;
 

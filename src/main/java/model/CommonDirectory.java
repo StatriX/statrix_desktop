@@ -1,11 +1,11 @@
-package model;
+package main.java.model;
 
 public abstract class CommonDirectory {
     private Integer id;
     private String name;
     private boolean defDirectory;
 
-    public CommonDirectory(){
+    public CommonDirectory() {
 
     }
 

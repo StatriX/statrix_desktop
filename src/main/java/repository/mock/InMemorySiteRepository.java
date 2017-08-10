@@ -1,11 +1,10 @@
-package repository.mock;
+package main.java.repository.mock;
 
-import model.Site;
-import repository.SiteRepository;
+import main.java.model.Site;
+import main.java.repository.SiteRepository;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -21,7 +20,7 @@ public class InMemorySiteRepository implements SiteRepository {
 
     @Override
     public void save(Site site) {
-        if(site.getId() == null) {
+        if (site.getId() == null) {
             site.setId(counter.incrementAndGet());
         }
 

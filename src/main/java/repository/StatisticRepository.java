@@ -1,11 +1,10 @@
-package repository;
+package main.java.repository;
 
-import model.GeneralStatistic;
-import model.PeriodicalStatistic;
+import main.java.model.GeneralStatistic;
+import main.java.model.PeriodicalStatistic;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public interface StatisticRepository {
     Map<GeneralStatistic, Integer> generalStatistic(List<String> site, List<String> person);

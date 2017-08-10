@@ -1,6 +1,6 @@
-package service;
+package main.java.service;
 
-import model.Keyword;
+import main.java.model.Keyword;
 
 import java.util.List;
 
