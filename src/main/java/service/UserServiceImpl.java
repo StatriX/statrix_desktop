@@ -1,5 +1,7 @@
 package main.java.service;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import main.java.model.User;
 import main.java.repository.UserRepository;
 import main.java.repository.mock.InMemoryUserRepository;
@@ -20,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAll() {
-        return userRepository.getAll();
+    public ObservableList<User> getAll() {
+        return FXCollections.observableArrayList(userRepository.getAll());
     }
 }

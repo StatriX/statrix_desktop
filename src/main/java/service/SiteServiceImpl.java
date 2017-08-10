@@ -1,5 +1,7 @@
 package main.java.service;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import main.java.model.Site;
 import main.java.repository.SiteRepository;
 import main.java.repository.mock.InMemorySiteRepository;
@@ -20,7 +22,7 @@ public class SiteServiceImpl implements SiteService {
     }
 
     @Override
-    public List<Site> getAll() {
-        return siteRepository.getAll();
+    public ObservableList<Site> getAll() {
+        return FXCollections.observableArrayList(siteRepository.getAll());
     }
 }

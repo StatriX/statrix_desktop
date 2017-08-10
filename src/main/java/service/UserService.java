@@ -1,5 +1,6 @@
 package main.java.service;
 
+import javafx.collections.ObservableList;
 import main.java.model.User;
 
 import java.util.List;
@@ -9,5 +10,5 @@ public interface UserService {
 
     void delete(int id);
 
-    List<User> getAll();
+    ObservableList<User> getAll();
 }
