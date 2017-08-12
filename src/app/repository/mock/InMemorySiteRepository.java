@@ -21,15 +21,19 @@ public class InMemorySiteRepository implements SiteRepository {
     @Override
     public void save(Site site) {
         if (site.getId() == null) {
+            System.out.println("new site add");
             site.setId(counter.incrementAndGet());
         }
 
         repository.put(site.getId(), site);
+        System.out.println("кол-во элементов в мапе: " + repository.size());
     }
 
     @Override
     public void delete(int id) {
+        System.out.println("remove id: " + id);
         repository.remove(id);
+        System.out.println("кол-во элементов в мапе: " + repository.size());
     }
 
     @Override

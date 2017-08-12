@@ -38,12 +38,12 @@
                <children>
                   <HBox layoutX="-43.0" layoutY="-2.0">
                      <children>
-                              <TextField focusTraversable="false" layoutX="-43.0" layoutY="-1.0" prefWidth="350.0" promptText="Добавить сайт">
+                              <TextField fx:id="newSiteId" focusTraversable="false" layoutX="-43.0" layoutY="-1.0" prefWidth="350.0" promptText="Добавить сайт">
                                   <font>
                                       <Font size="15.0" />
                                   </font>
                               </TextField>
-                              <Button layoutX="195.0" layoutY="-2.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Добавить">
+                              <Button layoutX="195.0" layoutY="-2.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddSite" prefWidth="100.0" text="Добавить">
                                   <font>
                                       <Font size="15.0" />
                                   </font>
@@ -53,7 +53,7 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </HBox>
-                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Удалить">
+                        <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDeleteSite" prefWidth="100.0" text="Удалить">
                             <font>
                                 <Font size="15.0" />
                             </font>

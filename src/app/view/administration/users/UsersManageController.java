@@ -31,8 +31,8 @@ public class UsersManageController implements ModalWindows, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userName.setCellValueFactory(userData -> userData.getValue().nameProperty());
-
         userRole.setCellValueFactory(roleData -> new SimpleStringProperty(roleData.getValue().isAdministrator() ? "Adnin" : "User" ));
+
         usersTableList.setItems(userService.getAll());
     }
 
