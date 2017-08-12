@@ -10,4 +10,6 @@ public interface PersonRepository {
     void delete(int id);
 
     List<Person> getAll();
+
+    List<String> getPersonName();
 }

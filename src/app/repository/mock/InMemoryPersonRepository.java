@@ -38,4 +38,13 @@ public class InMemoryPersonRepository implements PersonRepository {
     public List<Person> getAll() {
         return new ArrayList<>(repository.values());
     }
+
+    @Override
+    public List<String> getPersonName() {
+        ArrayList<String> personName = new ArrayList<>();
+
+        getAll().forEach(name -> personName.add(name.getName()));
+
+        return personName;
+    }
 }
