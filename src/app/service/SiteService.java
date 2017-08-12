@@ -9,4 +9,6 @@ public interface SiteService {
     void delete(int id);
 
     ObservableList<Site> getAll();
+
+    ObservableList<String> getAllSitesName();
 }

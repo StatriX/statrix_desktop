@@ -39,7 +39,7 @@
                         <Insets left="30.0" right="15.0" />
                     </GridPane.margin>
                 </ListView>
-                <ListView focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ListView fx:id="sitesList" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets left="15.0" right="30.0" />
                     </GridPane.margin>

@@ -2,6 +2,8 @@ package app.view.statistics;
 
 import app.service.PersonService;
 import app.service.PersonServiceImpl;
+import app.service.SiteService;
+import app.service.SiteServiceImpl;
 import app.view.ModalWindows;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +22,11 @@ public class StatisticController implements ModalWindows, Initializable {
     @FXML
     private ListView<String> personsList;
 
+    private SiteService siteService = new SiteServiceImpl();
+
+    @FXML
+    private ListView<String> sitesList;
+
     @FXML
     public Button showCommonStatistic;
 
@@ -34,12 +41,14 @@ public class StatisticController implements ModalWindows, Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         personsList.setItems(personService.getAllName());
         personsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        sitesList.setItems(siteService.getAllSitesName());
+        sitesList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
 
-        String fileName = null;
+        String fileName;
 
         if (showCommonStatistic.isFocused()) {
             fileName = "/statistics/CommonStatistic.fxml";

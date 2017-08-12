@@ -27,7 +27,7 @@
                   <Insets />
                </GridPane.margin>
             </Label>
-            <ListView editable="true" focusTraversable="false" maxWidth="500.0" minWidth="360.0" nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="2">
+            <ListView fx:id="keywordsList" editable="true" focusTraversable="false" maxWidth="500.0" minWidth="360.0" nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>

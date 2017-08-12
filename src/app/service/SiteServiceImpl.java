@@ -6,6 +6,8 @@ import app.repository.mock.InMemorySiteRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.stream.Collectors;
+
 public class SiteServiceImpl implements SiteService {
     private SiteRepository siteRepository = new InMemorySiteRepository();
 
@@ -22,5 +24,13 @@ public class SiteServiceImpl implements SiteService {
     @Override
     public ObservableList<Site> getAll() {
         return FXCollections.observableArrayList(siteRepository.getAll());
+    }
+
+    @Override
+    public ObservableList<String> getAllSitesName() {
+        return FXCollections.observableArrayList(siteRepository.getAll()
+                .stream()
+                .map( p -> p.getName())
+                .collect(Collectors.toList()));
     }
 }

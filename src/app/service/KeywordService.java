@@ -9,4 +9,6 @@ public interface KeywordService {
     void delete(int id);
 
     ObservableList<Keyword> getAllByPersonId(Integer id);
+
+    ObservableList<String> getAllKeyword(Integer id);
 }
