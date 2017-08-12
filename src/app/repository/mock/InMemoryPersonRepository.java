@@ -16,6 +16,7 @@ public class InMemoryPersonRepository implements PersonRepository {
         repository.put(counter.incrementAndGet(), new Person(counter.get(), "Person1", true));
         repository.put(counter.incrementAndGet(), new Person(counter.get(), "Person2", true));
         repository.put(counter.incrementAndGet(), new Person(counter.get(), "Person3", false));
+        repository.put(counter.incrementAndGet(), new Person(counter.get(), "Person4", false));
     }
 
     @Override

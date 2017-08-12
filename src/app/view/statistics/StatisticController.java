@@ -1,11 +1,25 @@
 package app.view.statistics;
 
+import app.model.Person;
+import app.service.PersonService;
+import app.service.PersonServiceImpl;
 import app.view.ModalWindows;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 
-public class StatisticController implements ModalWindows {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class StatisticController implements ModalWindows, Initializable {
+
+    private PersonService personService = new PersonServiceImpl();
+
+    @FXML
+    private ListView<Person> personsList;
 
     @FXML
     public Button showCommonStatistic;
@@ -25,5 +39,10 @@ public class StatisticController implements ModalWindows {
             fileName = "/statistics/EverydayStatistic.fxml";
             onShowModalWindow(actionEvent, fileName, "Ежедневная статистика");
         }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        personsList.setItems(FXCollections.observableArrayList(personService.getAll()));
     }
 }

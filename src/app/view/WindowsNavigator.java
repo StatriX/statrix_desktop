@@ -1,6 +1,7 @@
 package app.view;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 
 import java.io.IOException;
 
@@ -29,6 +30,8 @@ public class WindowsNavigator {
                             )
                     )
             );
+
+            setNavigationMenuController(navigationMenuController);
         } catch (IOException e) {
             e.printStackTrace();
         }
