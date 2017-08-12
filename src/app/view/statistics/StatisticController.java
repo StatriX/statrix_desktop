@@ -1,12 +1,8 @@
 package app.view.statistics;
 
-import app.model.Person;
-import app.repository.PersonRepository;
-import app.repository.mock.InMemoryPersonRepository;
 import app.service.PersonService;
 import app.service.PersonServiceImpl;
 import app.view.ModalWindows;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,11 +12,9 @@ import javafx.scene.control.SelectionMode;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
 
 public class StatisticController implements ModalWindows, Initializable {
 
-    //private PersonRepository personRepository = new InMemoryPersonRepository();
     private PersonService personService = new PersonServiceImpl();
 
     @FXML
@@ -38,7 +32,6 @@ public class StatisticController implements ModalWindows, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //personsList.setItems(FXCollections.observableArrayList(personRepository.getPersonName()));
         personsList.setItems(personService.getAllName());
         personsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
