@@ -10,7 +10,8 @@ public class User {
     private StringProperty name;
     private StringProperty password;
     private StringProperty email;
-    private BooleanProperty administrator;
+    //private BooleanProperty administrator;
+    private boolean administrator;
 
     public User() {
     }
@@ -19,7 +20,8 @@ public class User {
         this.name = new SimpleStringProperty(name);
         this.password = new SimpleStringProperty(password);
         this.email = new SimpleStringProperty(email);
-        this.administrator = new SimpleBooleanProperty(administrator);
+        //this.administrator = new SimpleBooleanProperty(administrator);
+        this.administrator = administrator;
     }
 
 
@@ -28,7 +30,8 @@ public class User {
         this.name = new SimpleStringProperty(name);
         this.password = new SimpleStringProperty(password);
         this.email = new SimpleStringProperty(email);
-        this.administrator = new SimpleBooleanProperty(administrator);
+        //this.administrator = new SimpleBooleanProperty(administrator);
+        this.administrator = administrator;
     }
 
 
@@ -65,14 +68,14 @@ public class User {
     }
 
     public boolean isAdministrator() {
-        return administrator.get();
+        return administrator;
     }
 
     public void setAdministrator(boolean administrator) {
-        this.administrator.set(administrator);
+        this.administrator = administrator;
     }
 
-    public BooleanProperty administratorProperty() {
+    public boolean administratorProperty() {
         return administrator;
     }
 

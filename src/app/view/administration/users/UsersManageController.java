@@ -4,6 +4,8 @@ import app.model.User;
 import app.service.UserService;
 import app.service.UserServiceImpl;
 import app.view.ModalWindows;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -24,12 +26,13 @@ public class UsersManageController implements ModalWindows, Initializable {
     private TableColumn<User, String> userName;
 
     @FXML
-    private TableColumn<User, Boolean> userRole;
+    private TableColumn<User, String> userRole;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         userName.setCellValueFactory(userData -> userData.getValue().nameProperty());
-        userRole.setCellValueFactory(roleData -> roleData.getValue().administratorProperty());
+
+        userRole.setCellValueFactory(roleData -> new SimpleStringProperty(roleData.getValue().isAdministrator() ? "Adnin" : "User" ));
         usersTableList.setItems(userService.getAll());
     }
 
