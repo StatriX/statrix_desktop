@@ -12,7 +12,7 @@
     -fx-region-background: null;
 }
 
-#statisticButton: focused {
+#statisticButton:focused {
     -fx-font-weight: bold;
     -fx-underline: true;
 }
@@ -27,7 +27,7 @@
     -fx-region-background: null;
 }
 
-#buttonMenu: focused {
+#buttonMenu:focused {
     -fx-font-weight: bold;
     -fx-underline: true;
 }

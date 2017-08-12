@@ -20,7 +20,8 @@ import java.util.function.Predicate;
 
 public class StatisticController implements ModalWindows, Initializable {
 
-    private PersonRepository personRepository = new InMemoryPersonRepository();
+    //private PersonRepository personRepository = new InMemoryPersonRepository();
+    private PersonService personService = new PersonServiceImpl();
 
     @FXML
     private ListView<String> personsList;
@@ -37,7 +38,8 @@ public class StatisticController implements ModalWindows, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        personsList.setItems(FXCollections.observableArrayList(personRepository.getPersonName()));
+        //personsList.setItems(FXCollections.observableArrayList(personRepository.getPersonName()));
+        personsList.setItems(personService.getAllName());
         personsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 

@@ -11,4 +11,6 @@ public interface PersonService {
     void delete(int id);
 
     ObservableList<Person> getAll();
+
+    ObservableList<String> getAllName();
 }

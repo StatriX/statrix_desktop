@@ -6,6 +6,8 @@ import app.repository.mock.InMemoryPersonRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.stream.Collectors;
+
 public class PersonServiceImpl implements PersonService {
     private PersonRepository personRepository = new InMemoryPersonRepository();
 
@@ -22,5 +24,13 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public ObservableList<Person> getAll() {
         return FXCollections.observableList(personRepository.getAll());
+    }
+
+    @Override
+    public ObservableList<String> getAllName() {
+        return FXCollections.observableArrayList(personRepository.getAll()
+                .stream()
+                .map( p -> p.getName())
+                .collect(Collectors.toList()));
     }
 }
