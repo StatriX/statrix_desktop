@@ -13,6 +13,7 @@ import javafx.scene.control.ListView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class StatisticController implements ModalWindows, Initializable {
 
@@ -27,6 +28,15 @@ public class StatisticController implements ModalWindows, Initializable {
     @FXML
     private Button showEverydayStatistic;
 
+    public StatisticController() {
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        personsList.setItems(personService.getAll());
+    }
+
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
 
@@ -39,10 +49,5 @@ public class StatisticController implements ModalWindows, Initializable {
             fileName = "/statistics/EverydayStatistic.fxml";
             onShowModalWindow(actionEvent, fileName, "Ежедневная статистика");
         }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        personsList.setItems(FXCollections.observableArrayList(personService.getAll()));
     }
 }

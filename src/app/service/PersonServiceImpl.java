@@ -3,8 +3,8 @@ package app.service;
 import app.model.Person;
 import app.repository.PersonRepository;
 import app.repository.mock.InMemoryPersonRepository;
-
-import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class PersonServiceImpl implements PersonService {
     private PersonRepository personRepository = new InMemoryPersonRepository();
@@ -20,7 +20,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public List<Person> getAll() {
-        return personRepository.getAll();
+    public ObservableList<Person> getAll() {
+        return FXCollections.observableList(personRepository.getAll());
     }
 }

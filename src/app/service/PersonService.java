@@ -10,5 +10,5 @@ public interface PersonService {
 
     void delete(int id);
 
-    List<Person> getAll();
+    ObservableList<Person> getAll();
 }
