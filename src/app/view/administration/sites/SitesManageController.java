@@ -6,7 +6,6 @@ import app.service.SiteServiceImpl;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -19,7 +18,7 @@ public class SitesManageController implements Initializable {
     private SiteService siteService = new SiteServiceImpl();
 
     @FXML
-    private TableView<Site> sitesList;
+    private TableView<Site> siteTableView;
 
     @FXML
     private TableColumn<Site, String> siteName;
@@ -30,20 +29,21 @@ public class SitesManageController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         siteName.setCellValueFactory( siteData -> new SimpleStringProperty(siteData.getValue().getName()));
-        sitesList.setItems(siteService.getAll());
+        siteTableView.setItems(siteService.getAll());
     }
 
     @FXML
     public void handleDeleteSite() {
-        int selectedIndex = sitesList.getSelectionModel().getSelectedItem().getId();
-        siteService.delete(selectedIndex);
-        sitesList.setItems(siteService.getAll());
+        int selectedIndexSite = siteTableView.getSelectionModel().getSelectedItem().getId();
+
+        siteService.delete(selectedIndexSite);
+        siteTableView.setItems(siteService.getAll());
     }
 
     @FXML void handleAddSite() {
         Site tmpSite = new Site(newSiteId.getText());
         siteService.save(tmpSite);
         newSiteId.clear();
-        sitesList.setItems(siteService.getAll());
+        siteTableView.setItems(siteService.getAll());
     }
 }
