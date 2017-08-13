@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox fx:id="updateGeneralWindow" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.NavigationMenuController">
+    <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane maxWidth="200.0" minWidth="200.0" prefWidth="200.0">
+               <children>
+                      <Label text="Имя пользователя" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="44.0" layoutY="126.0" spacing="20.0" stylesheets="/navigation/LabelMenuStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                     <children>
+                        <Button id="statisticButton" fx:id="statistic" mnemonicParsing="false" onMouseClicked="#showWindowStatistic" text="Статистика" wrapText="true">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <VBox>
+                           <children>
+                              <Label id="selectedAdministration" fx:id="administration" layoutX="64.0" layoutY="189.0" stylesheets="/navigation/LabelMenuStyle.css" text="Администрирование">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button id="buttonMenu" fx:id="persons" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationPerson" text="Личности">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="buttonMenu" fx:id="sites" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationSites" text="Сайты">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button id="buttonMenu" fx:id="users" mnemonicParsing="false" onMouseClicked="#showWindowAdministrationUsers" text="Пользователи">
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane maxHeight="180.0" maxWidth="200.0" minHeight="180.0" minWidth="200.0" prefHeight="180.0" prefWidth="200.0" stylesheets="/navigation/LabelMenuStyle.css">
+               <children>
+                  <VBox AnchorPane.topAnchor="10.0">
+                     <children>
+                        <Button id="buttonMenu" fx:id="aboutProgram" mnemonicParsing="false" onMouseClicked="#showAboutProgram" text="О программе">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="buttonMenu" fx:id="messageAboutError" mnemonicParsing="false" onMouseClicked="#showWindowMessageAboutError" text="Сообщить об ошибке">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button id="exitButton" fx:id="exitButton" layoutX="17.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#onExitButtonFromWindow" text="Выход из программы">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+        <StackPane fx:id="generalWindowsHolder" HBox.hgrow="ALWAYS" />
+    </children>
+</HBox>

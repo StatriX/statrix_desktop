@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="290.0" maxWidth="500.0" minHeight="290.0" minWidth="400.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="290.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.administration.users.AddEditUserController">
+    <children>
+        <GridPane alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="BOTTOM" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" valignment="BOTTOM" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label focusTraversable="false" layoutX="140.0" layoutY="19.0" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Регистрация нового пользователя" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label focusTraversable="false" maxHeight="30.0" maxWidth="141.0" minHeight="30.0" minWidth="141.0" prefHeight="30.0" prefWidth="141.0" text="Имя пользователя:" AnchorPane.leftAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField focusTraversable="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Введите имя пользователя" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label focusTraversable="false" maxHeight="30.0" maxWidth="55.0" minHeight="30.0" minWidth="55.0" prefHeight="30.0" prefWidth="55.0" text="e-mail:" AnchorPane.leftAnchor="106.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField focusTraversable="false" promptText="Введите e-mail" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label focusTraversable="false" maxHeight="30.0" maxWidth="65.0" minHeight="30.0" minWidth="65.0" prefHeight="30.0" prefWidth="65.0" text="Пароль:" AnchorPane.leftAnchor="96.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <PasswordField focusTraversable="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Введите пароль" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label focusTraversable="false" maxHeight="30.0" maxWidth="141.0" minHeight="30.0" minWidth="141.0" prefHeight="30.0" prefWidth="141.0" text="Повторите пароль:" AnchorPane.leftAnchor="20.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <PasswordField focusTraversable="false" layoutX="168.0" layoutY="14.0" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" promptText="Повторите пароль" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <HBox alignment="CENTER" spacing="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <Button focusTraversable="true" maxHeight="30.0" maxWidth="145.0" minHeight="30.0" minWidth="145.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="145.0" text="Зарегистрировать">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="cancelButton" maxHeight="30.0" maxWidth="145.0" minHeight="30.0" minWidth="145.0" mnemonicParsing="false" onMouseClicked="#cancelClick" prefHeight="30.0" prefWidth="145.0" text="Отмена">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxWidth="610.0" minHeight="350.0" minWidth="540.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.messages.AboutErrorController">
+   <children>
+      <Button maxWidth="100.0" minWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Отправить" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField focusTraversable="false" promptText="e-mail" AnchorPane.leftAnchor="192.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Label text="Ваш контактный e-mail:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label text="Описание проблемы:" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="61.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextArea focusTraversable="false" promptText="Опишите проблему, с которой вы столкнулись" AnchorPane.bottomAnchor="81.0" AnchorPane.leftAnchor="192.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="61.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>
