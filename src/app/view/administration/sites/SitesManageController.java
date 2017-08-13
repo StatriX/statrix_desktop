@@ -34,10 +34,11 @@ public class SitesManageController implements Initializable {
 
     @FXML
     public void handleDeleteSite() {
-        int selectedIndexSite = siteTableView.getSelectionModel().getSelectedItem().getId();
+        if(siteTableView.getSelectionModel().getSelectedIndex() > 0) {
+            siteService.delete(siteTableView.getSelectionModel().getSelectedItem().getId());
+            siteTableView.setItems(siteService.getAll());
+        }
 
-        siteService.delete(selectedIndexSite);
-        siteTableView.setItems(siteService.getAll());
     }
 
     @FXML void handleAddSite() {

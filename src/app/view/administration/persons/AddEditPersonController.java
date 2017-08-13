@@ -1,15 +1,12 @@
 package app.view.administration.persons;
 
+import app.model.Keyword;
 import app.service.KeywordService;
 import app.service.KeywordServiceImpl;
 import app.view.confirmation.ManageConfirmation;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class AddEditPersonController implements ManageConfirmation {
 /*
@@ -20,10 +17,16 @@ public class AddEditPersonController implements ManageConfirmation {
     private KeywordService keywordService = new KeywordServiceImpl();
 
     @FXML
-    public ListView<String> keywordsList;
+    public ListView<Keyword> keywordsList;
+
 
     @FXML
     Button cancelButton;
+
+    @FXML
+    public void initialize() {
+
+    }
 
     @FXML
     public void closeModalWindow() {

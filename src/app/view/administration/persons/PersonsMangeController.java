@@ -35,12 +35,14 @@ public class PersonsMangeController implements ModalWindows, Initializable {
         onShowModalWindow(mouseEvent, "/administration/persons/AddEditPerson.fxml", "Добавление/редактирование личности");
     }
 
+
+
     @FXML
     public void handleDeletePerson() {
-        int selectedIndexPerson = personTableView.getSelectionModel().getSelectedItem().getId();
-
-        personService.delete(selectedIndexPerson);
-        personTableView.setItems(personService.getAll());
+        if(personTableView.getSelectionModel().getSelectedIndex() > 0) {
+            personService.delete(personTableView.getSelectionModel().getSelectedItem().getId());
+            personTableView.setItems(personService.getAll());
+        }
     }
 
 }
