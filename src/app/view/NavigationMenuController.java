@@ -42,48 +42,78 @@ public class NavigationMenuController implements ModalWindows {
     }
 
     @FXML
+    public void initialize() {
+        statistic.setId("statisticButton_focus");
+        administration.setId("selectedAdministration");
+        persons.setId("buttonMenu");
+        sites.setId("buttonMenu");
+        users.setId("buttonMenu");
+        aboutProgram.setId("buttonMenu");
+        messageAboutError.setId("buttonMenu");
+        exitButton.setId("buttonMenu");
+    }
+
+    @FXML
     public void onExitButtonFromWindow(MouseEvent mouseEvent) {
         onShowModalWindow(mouseEvent, "/confirmation/WindowConfirmation.fxml", "Выход из программы");
-        allotAdministration(exitButton);
+        allotPressedButton(exitButton);
     }
 
     @FXML
     public void showWindowStatistic() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_STATISTIC);
-        allotAdministration(statistic);
+        initialize();
+
+        allotPressedButton(statistic);
     }
 
     public void showWindowAdministrationPerson() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_ADMINISTRATION_PERSONS);
-        allotAdministration(persons);
+        initialize();
+        persons.setId("buttonMenu_focus");
+        allotPressedButton(persons);
     }
 
     public void showWindowAdministrationSites() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_ADMINISTRATION_SITES);
-        allotAdministration(sites);
+        initialize();
+        sites.setId("buttonMenu_focus");
+        allotPressedButton(sites);
     }
 
     public void showWindowAdministrationUsers() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_ADMINISTRATION_USERS);
-        allotAdministration(users);
+        initialize();
+        users.setId("buttonMenu_focus");
+        allotPressedButton(users);
     }
 
     public void showWindowMessageAboutError() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_MESSAGE_ABOUT_ERROR);
-        allotAdministration(messageAboutError);
+        initialize();
+        messageAboutError.setId("buttonMenu_focus");
+        allotPressedButton(messageAboutError);
     }
 
     public void showAboutProgram() {
         WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_MESSAGE_ABOUT_PROGRAM);
-        allotAdministration(aboutProgram);
+        initialize();
+        aboutProgram.setId("buttonMenu_focus");
+        allotPressedButton(aboutProgram);
     }
 
-    public void allotAdministration(Region region) {
+    public void allotPressedButton(Region region) {
         if (region.equals(persons) || region.equals(sites) || region.equals(users)
                 || region.equals(administration)) {
             administration.setId("selectedAdministration_focus");
         } else {
             administration.setId("selectedAdministration");
+        }
+
+        if (region.equals(statistic)) {
+            statistic.setId("statisticButton_focus");
+        } else {
+            statistic.setId("statisticButton");
         }
     }
 }

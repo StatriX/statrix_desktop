@@ -4,13 +4,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.statistics.StatisticController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.statistics.StatisticController">
     <children>
         <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" percentWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="100.0" percentWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="50.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="-Infinity" percentWidth="50.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
@@ -34,16 +33,6 @@
                         <Insets right="15.0" />
                     </GridPane.margin>
                 </Label>
-                <ListView fx:id="personsList" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                    <GridPane.margin>
-                        <Insets left="30.0" right="15.0" />
-                    </GridPane.margin>
-                </ListView>
-                <ListView fx:id="sitesList" focusTraversable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <GridPane.margin>
-                        <Insets left="15.0" right="30.0" />
-                    </GridPane.margin>
-                </ListView>
                 <Button fx:id="showCommonStatistic" minWidth="250.0" mnemonicParsing="false" onAction="#showWindowStatistic" text="Общая статистика" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets left="15.0" />
@@ -60,6 +49,28 @@
                         <Insets right="15.0" />
                     </GridPane.margin>
                 </Button>
+            <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="255.0" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="personsName" prefWidth="75.0" text="Личности" />
+              </columns>
+               <GridPane.margin>
+                  <Insets left="30.0" right="15.0" />
+               </GridPane.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="255.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="sitesName" prefWidth="75.0" text="Сайты" />
+              </columns>
+               <GridPane.margin>
+                  <Insets left="15.0" right="30.0" />
+               </GridPane.margin>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
             </children>
         </GridPane>
     </children>
