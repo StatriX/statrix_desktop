@@ -1,42 +1,56 @@
 package app.model;
 
+import javafx.beans.property.*;
+
 public abstract class CommonDirectory {
-    private Integer id;
-    private String name;
-    private boolean defDirectory;
+    private IntegerProperty id;
+    private StringProperty name;
+    private BooleanProperty defDirectory;
 
     public CommonDirectory() {
 
     }
 
     CommonDirectory(Integer id, String name, boolean defDirectory) {
-        this.id = id;
-        this.name = name;
-        this.defDirectory = defDirectory;
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.defDirectory = new SimpleBooleanProperty(defDirectory);
     }
 
     public Integer getId() {
-        return id;
+        return id.get();
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.id.set(id);
+    }
+
+    public IntegerProperty idProperty() {
+        return id;
     }
 
     public String getName() {
-        return name;
+        return name.get();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
-    public boolean isDefDirectory() {
-        return defDirectory;
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public boolean getDefDirectory() {
+        return defDirectory.get();
     }
 
     public void setDefDirectory(boolean defDirectory) {
-        this.defDirectory = defDirectory;
+        this.defDirectory.set(defDirectory);
+    }
+
+    public BooleanProperty defDirectoryProperty() {
+        return defDirectory;
     }
 
     public boolean isNew() {
