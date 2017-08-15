@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.view.confirmation.ConfirmationController">
+            fx:controller="app.view.statistics.CommonStatisticOverviewController">
     <GridPane>
         <columnConstraints>
             <ColumnConstraints hgrow="ALWAYS" minWidth="50.0"/>
@@ -42,7 +42,7 @@
                 </TableView>
             </center>
         </BorderPane>
-        <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#closeModalWindow" text="Закрыть"
+        <Button fx:id="closeButton" mnemonicParsing="false" onAction="#closeModalWindow" text="Закрыть"
                 GridPane.columnIndex="1" GridPane.rowIndex="2">
             <font>
                 <Font name="System Bold" size="15.0"/>
