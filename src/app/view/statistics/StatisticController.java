@@ -14,13 +14,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class StatisticController implements ModalWindows, Initializable {
 
     private PersonService personService = new PersonServiceImpl();
     private SiteService siteService = new SiteServiceImpl();
-    private CommonStatisticOverview commonStatisticOverview = new CommonStatisticOverview();
+    private Overview overview = new Overview();
 
     @FXML
     private TableView<Person> personsTable;
@@ -33,7 +34,7 @@ public class StatisticController implements ModalWindows, Initializable {
     TableColumn<Site, String> sitesName;
 
     @FXML
-    public Button showCommonStatistic;
+    private Button showCommonStatistic;
 
     @FXML
     private Button showEverydayStatistic;
@@ -53,21 +54,24 @@ public class StatisticController implements ModalWindows, Initializable {
         sitesTable.setItems(siteService.getAll());
     }
 
+    private String selectedStatisticFile() {
+        if (showCommonStatistic.isFocused()) {
+            return "/statistics/CommonStatistic.fxml";
+        }
+
+        if (showEverydayStatistic.isFocused()) {
+            return "/statistics/EverydayStatistic.fxml";
+        }
+
+        return "";
+    }
+
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
         ObservableList<Person> selectedPersons = personsTable.getSelectionModel().getSelectedItems();
+        List<Site> selectedSites = sitesTable.getSelectionModel().getSelectedItems();
         if (selectedPersons.size() != 0) {
-            commonStatisticOverview.showCommonStatistic(actionEvent, selectedPersons);
+            overview.showStatistic(actionEvent, selectedPersons, selectedSites, selectedStatisticFile());
         }
-
-//        String fileName;
-//
-//        if (showCommonStatistic.isFocused()) {
-//            fileName = "/statistics/CommonStatistic.fxml";
-//            onShowModalWindow(actionEvent,fileName, "Общая статистика");
-//        } else if (showEverydayStatistic.isFocused()) {
-//            fileName = "/statistics/EverydayStatistic.fxml";
-//            onShowModalWindow(actionEvent, fileName, "Ежедневная статистика");
-//        }
     }
 }
