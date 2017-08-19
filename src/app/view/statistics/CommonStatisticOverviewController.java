@@ -22,12 +22,12 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
 
     private Stage dialogStage;
     private Overview overview;
-    private ObservableList<Person> selectedPersons;
+    private List<Person> selectedPersons;
     private List<Site> selectedSites;
     private StatisticService statisticService = new StatisticServiceImp();
 
     @FXML
-    private TableView commonStatistics;
+    private TableView<Person> commonStatistics;
     @FXML
     private TableColumn<Person, String> personsName;
     @FXML
@@ -49,7 +49,7 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
     public void setOverview(Overview overview) {
         this.overview = overview;
 
-        commonStatistics.setItems(selectedPersons);
+        commonStatistics.setItems(FXCollections.observableList(selectedPersons));
     }
 
     public ObservableMap<GeneralStatistic, Integer> getListMap() {
