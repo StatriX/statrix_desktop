@@ -6,11 +6,14 @@ import java.util.Comparator;
 public class PeriodicalStatistic implements Comparable<PeriodicalStatistic> {
     private LocalDate date;
     private String person;
+    private Integer value;
 
-    public PeriodicalStatistic(LocalDate date, String person) {
+    public PeriodicalStatistic(LocalDate date, String person, Integer value) {
         this.date = date;
         this.person = person;
+        this.value = value;
     }
+
 
     public LocalDate getDate() {
         return date;
@@ -28,23 +31,14 @@ public class PeriodicalStatistic implements Comparable<PeriodicalStatistic> {
         this.person = person;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        PeriodicalStatistic that = (PeriodicalStatistic) o;
-
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        return person != null ? person.equals(that.person) : that.person == null;
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public int hashCode() {
-        int result = date != null ? date.hashCode() : 0;
-        result = 31 * result + (person != null ? person.hashCode() : 0);
-        return result;
+    public void setValue(Integer value) {
+        this.value = value;
     }
+
 
     @Override
     public int compareTo(PeriodicalStatistic o) {

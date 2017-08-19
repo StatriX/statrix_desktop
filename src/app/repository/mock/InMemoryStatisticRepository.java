@@ -15,26 +15,30 @@ public class InMemoryStatisticRepository implements StatisticRepository {
 
 
     @Override
-    public Map<GeneralStatistic, Integer> generalStatistic(List<Site> site, List<Person> person) {
-        Map<GeneralStatistic, Integer> generalStatisticMap = new TreeMap<>();
+    public List<GeneralStatistic> generalStatistic(List<Site> site, List<Person> person) {
+        List<GeneralStatistic> generalStatisticList = new ArrayList<>();
         for (Site strSite : site) {
             for (Person strPerson : person) {
-                generalStatisticMap.put(new GeneralStatistic(strSite.getName(), strPerson.getName()), new Random().nextInt((MAX - MIN) + 1) + MIN);
+                generalStatisticList.add(new GeneralStatistic(strSite.getName(), strPerson.getName(), new Random().nextInt((MAX - MIN) + 1) + MIN));
             }
         }
 
-        return generalStatisticMap;
+        Collections.sort(generalStatisticList);
+
+        return generalStatisticList;
     }
 
     @Override
-    public Map<PeriodicalStatistic, Integer> statisticByPeriod(String siteName, LocalDate beginDate, LocalDate endDate, List<Person> person) {
-        Map<PeriodicalStatistic, Integer> statisticByPeriodMap = new TreeMap<>();
+    public List<PeriodicalStatistic> statisticByPeriod(String siteName, LocalDate beginDate, LocalDate endDate, List<Person> person) {
+        List<PeriodicalStatistic> statisticByPeriodList = new ArrayList<>();
         for (; beginDate.isBefore(endDate); beginDate = beginDate.plusDays(1)) {
             for (Person strPerson : person) {
-                statisticByPeriodMap.put(new PeriodicalStatistic(beginDate, strPerson.getName()), new Random().nextInt((MAX - MIN) + 1) + MIN);
+                statisticByPeriodList.add(new PeriodicalStatistic(beginDate, strPerson.getName(), new Random().nextInt((MAX - MIN) + 1) + MIN));
             }
         }
 
-        return statisticByPeriodMap;
+        Collections.sort(statisticByPeriodList);
+
+        return statisticByPeriodList;
     }
 }

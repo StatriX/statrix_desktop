@@ -5,11 +5,14 @@ import java.util.Comparator;
 public class GeneralStatistic implements Comparable<GeneralStatistic> {
     private String siteName;
     private String personName;
+    private Integer value;
 
-    public GeneralStatistic(String siteName, String personName) {
+    public GeneralStatistic(String siteName, String personName, Integer value) {
         this.siteName = siteName;
         this.personName = personName;
+        this.value = value;
     }
+
 
     public String getSiteName() {
         return siteName;
@@ -27,23 +30,12 @@ public class GeneralStatistic implements Comparable<GeneralStatistic> {
         this.personName = personName;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GeneralStatistic that = (GeneralStatistic) o;
-
-        if (siteName != null ? !siteName.equals(that.siteName) : that.siteName != null) return false;
-        return personName != null ? personName.equals(that.personName) : that.personName == null;
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public int hashCode() {
-        int result = siteName != null ? siteName.hashCode() : 0;
-        result = 31 * result + (personName != null ? personName.hashCode() : 0);
-        return result;
+    public void setValue(Integer value) {
+        this.value = value;
     }
 
     @Override

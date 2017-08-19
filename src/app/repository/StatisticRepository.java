@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public interface StatisticRepository {
-    Map<GeneralStatistic, Integer> generalStatistic(List<Site> site, List<Person> person);
+    List<GeneralStatistic> generalStatistic(List<Site> site, List<Person> person);
 
-    Map<PeriodicalStatistic, Integer> statisticByPeriod(String siteName, LocalDate startDate, LocalDate endDate, List<Person> person);
+    List<PeriodicalStatistic> statisticByPeriod(String siteName, LocalDate startDate, LocalDate endDate, List<Person> person);
 }
