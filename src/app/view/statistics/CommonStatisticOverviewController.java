@@ -1,9 +1,14 @@
 package app.view.statistics;
 
+import app.model.GeneralStatistic;
 import app.model.Person;
 import app.model.Site;
+import app.service.StatisticService;
+import app.service.StatisticServiceImp;
 import app.view.confirmation.ManageConfirmation;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -11,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.Map;
 
 public class CommonStatisticOverviewController implements ManageConfirmation {
 
@@ -18,6 +24,7 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
     private Overview overview;
     private ObservableList<Person> selectedPersons;
     private List<Site> selectedSites;
+    private StatisticService statisticService = new StatisticServiceImp();
 
     @FXML
     private TableView commonStatistics;
@@ -30,8 +37,9 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
         this.dialogStage = dialogStage;
     }
 
-    void setSelectedPersons(ObservableList<Person> selectedPersons) {
-        this.selectedPersons = selectedPersons;
+    void setSelectedPersons(List<Person> selectedPersons) {
+        this.selectedPersons = FXCollections.observableList(selectedPersons);
+
     }
 
     public void setSelectedSites(List<Site> selectedSites) {
@@ -44,9 +52,18 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
         commonStatistics.setItems(selectedPersons);
     }
 
+    public ObservableMap<GeneralStatistic, Integer> getListMap() {
+        return statisticService.generalStatistic(selectedSites, selectedPersons);
+    }
+
     @FXML
     private void initialize() {
-        personsName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        for (Map.Entry<GeneralStatistic, Integer> value :
+                getListMap().entrySet()) {
+            System.out.println(value.getKey() + " " + value.getValue());
+        }
+        System.out.println(getListMap());
+//        personsName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
     }
 
     @FXML

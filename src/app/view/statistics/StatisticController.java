@@ -22,6 +22,8 @@ public class StatisticController implements ModalWindows, Initializable {
     private PersonService personService = new PersonServiceImpl();
     private SiteService siteService = new SiteServiceImpl();
     private Overview overview = new Overview();
+    private String title;
+    private String fxmlFile;
 
     @FXML
     private TableView<Person> personsTable;
@@ -54,24 +56,30 @@ public class StatisticController implements ModalWindows, Initializable {
         sitesTable.setItems(siteService.getAll());
     }
 
-    private String selectedStatisticFile() {
+    private void selectedStatisticFile() {
         if (showCommonStatistic.isFocused()) {
-            return "/statistics/CommonStatistic.fxml";
+            fxmlFile = "/statistics/CommonStatistic.fxml";
+            title = "Общая статистика";
         }
 
         if (showEverydayStatistic.isFocused()) {
-            return "/statistics/EverydayStatistic.fxml";
+            fxmlFile = "/statistics/EverydayStatistic.fxml";
+            title = "Ежедневная статистика";
         }
-
-        return "";
     }
 
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
-        ObservableList<Person> selectedPersons = personsTable.getSelectionModel().getSelectedItems();
+        List<Person> selectedPersons = personsTable.getSelectionModel().getSelectedItems();
         List<Site> selectedSites = sitesTable.getSelectionModel().getSelectedItems();
+        selectedStatisticFile();
         if (selectedPersons.size() != 0) {
-            overview.showStatistic(actionEvent, selectedPersons, selectedSites, selectedStatisticFile());
+            overview.showStatistic(actionEvent, selectedPersons, selectedSites, title, fxmlFile);
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Нет выбранных личностей или сайтов");
+            alert.setContentText("Выберите личности и сайты");
+            alert.showAndWait();
         }
     }
 }

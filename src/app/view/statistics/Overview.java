@@ -27,14 +27,14 @@ public class Overview {
         dialogStages.add(EVERYDAY_STATISTIC_DIALOG_STAGE);
     }
 
-    public void showStatistic(Event event, ObservableList<Person> selectedPersons, List<Site> selectedSites, String fxmlFile) {
+    public void showStatistic(Event event, List<Person> selectedPersons, List<Site> selectedSites, String title, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource(fxmlFile));
             Parent root = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Общая статистика");
+            dialogStage.setTitle(title);
             dialogStage.getIcons().add(new Image("/images/logo/favicon.png"));
             dialogStage.setFullScreen(false);
             dialogStage.setMinWidth(750);

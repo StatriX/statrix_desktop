@@ -3,7 +3,7 @@ package app.model;
 import javafx.beans.property.*;
 
 public abstract class CommonDirectory {
-    private IntegerProperty id;
+    private Integer id;
     private StringProperty name;
     private BooleanProperty defDirectory;
 
@@ -12,21 +12,17 @@ public abstract class CommonDirectory {
     }
 
     CommonDirectory(Integer id, String name, boolean defDirectory) {
-        this.id = new SimpleIntegerProperty(id);
+        this.id = id;
         this.name = new SimpleStringProperty(name);
         this.defDirectory = new SimpleBooleanProperty(defDirectory);
     }
 
     public Integer getId() {
-        return id.get();
+        return id;
     }
 
     public void setId(Integer id) {
-        this.id.set(id);
-    }
-
-    public IntegerProperty idProperty() {
-        return id;
+        this.id = id;
     }
 
     public String getName() {
