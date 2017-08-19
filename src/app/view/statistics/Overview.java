@@ -52,6 +52,7 @@ public class Overview {
                             controller.setDialogStage(dialogStage);
                             controller.setSelectedPersons(selectedPersons);
                             controller.setSelectedSites(selectedSites);
+                            controller.getTableView();
                             controller.setOverview(this);
                             break;
 
@@ -62,6 +63,8 @@ public class Overview {
                 }
             }
 
+            //Parent root = loader.load();
+            //dialogStage.setScene(new Scene(root));
             dialogStage.show();
 
         } catch (IOException e) {

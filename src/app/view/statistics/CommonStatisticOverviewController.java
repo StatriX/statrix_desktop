@@ -38,7 +38,7 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
     }
 
     void setSelectedPersons(List<Person> selectedPersons) {
-        this.selectedPersons = FXCollections.observableList(selectedPersons);
+        this.selectedPersons = selectedPersons;
 
     }
 
@@ -56,13 +56,20 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
         return statisticService.generalStatistic(selectedSites, selectedPersons);
     }
 
+    public void getTableView() {
+        for (Map.Entry<GeneralStatistic, Integer> value : getListMap().entrySet()) {
+            System.out.println(value.getKey().getSiteName() + " " + value.getKey().getPersonName() + " " + value.getValue());
+        }
+    }
+
     @FXML
     private void initialize() {
-        for (Map.Entry<GeneralStatistic, Integer> value :
+
+        /*for (Map.Entry<GeneralStatistic, Integer> value :
                 getListMap().entrySet()) {
             System.out.println(value.getKey() + " " + value.getValue());
         }
-        System.out.println(getListMap());
+        System.out.println(getListMap());*/
 //        personsName.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
     }
 
