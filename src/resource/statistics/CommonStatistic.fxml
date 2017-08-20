@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.Font?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.statistics.CommonStatisticOverviewController">
-   <children>
           <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
                   <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="400.0" />
@@ -17,7 +14,6 @@
                   <RowConstraints maxHeight="700.0" minHeight="300.0" valignment="CENTER" vgrow="ALWAYS" />
                   <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="70.0" vgrow="ALWAYS" />
               </rowConstraints>
-             <children>
                     <BorderPane minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0">
                         <top>
                             <Label alignment="CENTER" contentDisplay="CENTER" text="Общая статистика" BorderPane.alignment="CENTER">
@@ -32,7 +28,9 @@
                         <center>
                             <TableView fx:id="commonStatistics" focusTraversable="false" snapToPixel="false" BorderPane.alignment="CENTER">
                                 <columns>
-                                    <TableColumn fx:id="personsName" editable="false" prefWidth="75.0" sortable="false" text="Имя личности" />
+                                    <TableColumn fx:id="personsName" editable="false" prefWidth="75.0" text="Имя личности" />
+                                    <TableColumn fx:id="ratingPerson" editable="false" prefWidth="75.0" sortable="false" text="Рейтинг" />
+                                    <TableColumn fx:id="sitesName" editable="false" prefWidth="75.0" sortable="false" text="Сайт" />
                                 </columns>
                                 <cursor>
                                     <Cursor fx:constant="DEFAULT" />
@@ -54,7 +52,5 @@
                   <Insets bottom="20.0" top="20.0" />
                </GridPane.margin>
                     </Button>
-             </children>
           </GridPane>
-   </children>
 </AnchorPane>

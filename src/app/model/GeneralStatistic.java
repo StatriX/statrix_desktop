@@ -1,47 +1,48 @@
 package app.model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.Comparator;
 
 public class GeneralStatistic implements Comparable<GeneralStatistic> {
-    private String siteName;
-    private String personName;
-    private Integer value;
+    private StringProperty siteName;
+    private StringProperty personName;
+    private IntegerProperty value;
 
     public GeneralStatistic(String siteName, String personName, Integer value) {
-        this.siteName = siteName;
-        this.personName = personName;
-        this.value = value;
+        this.siteName = new SimpleStringProperty(siteName);
+        this.personName = new SimpleStringProperty(personName);
+        this.value = new SimpleIntegerProperty(value);
     }
 
 
-    public String getSiteName() {
+    private String getSiteName() {
+        return siteName.get();
+    }
+
+    public StringProperty siteNameProperty() {
         return siteName;
     }
 
-    public void setSiteName(String siteName) {
-        this.siteName = siteName;
+    private String getPersonName() {
+        return personName.get();
     }
 
-    public String getPersonName() {
+    public StringProperty personNameProperty() {
         return personName;
     }
 
-    public void setPersonName(String personName) {
-        this.personName = personName;
-    }
-
-    public Integer getValue() {
+    public IntegerProperty valueProperty() {
         return value;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
     }
 
     @Override
     public int compareTo(GeneralStatistic o) {
-        return Comparator.comparing(GeneralStatistic::getSiteName)
-                .thenComparing(GeneralStatistic::getPersonName)
+        return Comparator.comparing(GeneralStatistic::getPersonName)
+                .thenComparing(GeneralStatistic::getSiteName)
                 .compare(this, o);
 
     }

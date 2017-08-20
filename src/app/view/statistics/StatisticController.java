@@ -7,7 +7,6 @@ import app.service.PersonServiceImpl;
 import app.service.SiteService;
 import app.service.SiteServiceImpl;
 import app.view.ModalWindows;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,10 +70,10 @@ public class StatisticController implements ModalWindows, Initializable {
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
         List<Person> selectedPersons = personsTable.getSelectionModel().getSelectedItems();
-        List<Site> selectedSites = sitesTable.getSelectionModel().getSelectedItems();
+//        List<Site> selectedSites = sitesTable.getSelectionModel().getSelectedItems();
         selectedStatisticFile();
         if (selectedPersons.size() != 0) {
-            overview.showStatistic(actionEvent, selectedPersons, selectedSites, title, fxmlFile);
+            overview.showStatistic(actionEvent, selectedPersons, title, fxmlFile);
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Нет выбранных личностей или сайтов");

@@ -1,8 +1,6 @@
 package app.view.statistics;
 
 import app.model.Person;
-import app.model.Site;
-import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,7 +25,7 @@ public class Overview {
         dialogStages.add(EVERYDAY_STATISTIC_DIALOG_STAGE);
     }
 
-    public void showStatistic(Event event, List<Person> selectedPersons, List<Site> selectedSites, String title, String fxmlFile) {
+    public void showStatistic(Event event, List<Person> selectedPersons, String title, String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource(fxmlFile));
@@ -44,15 +42,16 @@ public class Overview {
             dialogStage.initOwner(((Node) event.getSource()).getScene().getWindow());
             dialogStage.setScene(new Scene(root));
 
+            System.out.println(selectedPersons);
+            System.out.println();
+
             for (String fxmlFileArrayList : dialogStages) {
                 if (fxmlFile.equals(fxmlFileArrayList)) {
                     switch (fxmlFile) {
                         case COMMON_STATISTIC_DIALOG_STAGE :
                             CommonStatisticOverviewController controller = loader.getController();
                             controller.setDialogStage(dialogStage);
-                            controller.setSelectedPersons(selectedPersons);
-                            controller.setSelectedSites(selectedSites);
-                            controller.getTableView();
+                            controller.setPersonsList(selectedPersons);
                             controller.setOverview(this);
                             break;
 
@@ -63,8 +62,6 @@ public class Overview {
                 }
             }
 
-            //Parent root = loader.load();
-            //dialogStage.setScene(new Scene(root));
             dialogStage.show();
 
         } catch (IOException e) {
