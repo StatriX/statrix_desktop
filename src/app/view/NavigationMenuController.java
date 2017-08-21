@@ -11,22 +11,30 @@ import javafx.scene.layout.StackPane;
 public class NavigationMenuController implements ModalWindows {
 
     @FXML
+    public Label userName;
+    @FXML
     private StackPane generalWindowsHolder;
 
     @FXML
-    private Button statistic;
+    private Label statistic;
+
+    @FXML
+    private Label commonStatistic;
+
+    @FXML
+    private Label everydayStatistic;
 
     @FXML
     private Label administration;
 
     @FXML
-    private Button persons;
+    private Label persons;
 
     @FXML
-    private Button sites;
+    private Label sites;
 
     @FXML
-    private Button users;
+    private Label users;
 
     @FXML
     private Button aboutProgram;
@@ -44,6 +52,8 @@ public class NavigationMenuController implements ModalWindows {
     @FXML
     public void initialize() {
         statistic.setId("statisticButton_focus");
+        commonStatistic.setId("buttonMenu_focus");
+        everydayStatistic.setId("buttonMenu");
         administration.setId("selectedAdministration");
         persons.setId("buttonMenu");
         sites.setId("buttonMenu");
@@ -60,11 +70,19 @@ public class NavigationMenuController implements ModalWindows {
     }
 
     @FXML
-    public void showWindowStatistic() {
-        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_STATISTIC);
+    public void showCommonStatistic() {
+        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_COMMON_STATISTIC);
         initialize();
+        commonStatistic.setId("buttonMenu_focus");
+        allotPressedButton(commonStatistic);
+    }
 
-        allotPressedButton(statistic);
+    @FXML
+    public void showEverydayStatistic() {
+        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_EVERYDAY_STATISTIC);
+        initialize();
+        everydayStatistic.setId("buttonMenu_focus");
+        allotPressedButton(everydayStatistic);
     }
 
     public void showWindowAdministrationPerson() {
@@ -110,10 +128,16 @@ public class NavigationMenuController implements ModalWindows {
             administration.setId("selectedAdministration");
         }
 
-        if (region.equals(statistic)) {
+        if (region.equals(commonStatistic) || region.equals(everydayStatistic)) {
             statistic.setId("statisticButton_focus");
         } else {
             statistic.setId("statisticButton");
+        }
+
+        if (region.equals(commonStatistic)) {
+            commonStatistic.setId("buttonMenu_focus");
+        } else {
+            commonStatistic.setId("buttonMenu");
         }
     }
 }

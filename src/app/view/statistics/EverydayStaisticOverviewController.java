@@ -28,9 +28,15 @@ public class EverydayStaisticOverviewController implements ManageConfirmation {
     @FXML
     private DatePicker beginDate;
     @FXML
-    public Button cancelButton;
+    private Button cancelButton;
     @FXML
-    public TableView everydayStatisticTable;
+    private TableView<PeriodicalStatistic> everydayStatisticTable;
+    @FXML
+    private TableColumn<PeriodicalStatistic, LocalDate> dailyDate;
+    @FXML
+    private TableColumn<PeriodicalStatistic, String> personName;
+    @FXML
+    private TableColumn<PeriodicalStatistic, Integer> rating;
     @FXML
     private ChoiceBox<String> sitesList;
 
@@ -38,30 +44,14 @@ public class EverydayStaisticOverviewController implements ManageConfirmation {
     void initialize() {
         sitesList.setValue(siteService.getAllSitesName().get(0));
         sitesList.setItems(siteService.getAllSitesName());
-        showTableEverydayStatistic();
-    }
 
-    public void showTableEverydayStatistic() {
-
-        ArrayList<Person> columnsName = new ArrayList<>(personService.getAll());
-        TableColumn<PeriodicalStatistic, LocalDate> columnLocalDate = new TableColumn<>("Дата");
-        columnLocalDate.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getDate()));
-        everydayStatisticTable.getColumns().add(columnLocalDate);
-
-        for (int i = 0; i < columnsName.size(); i++) {
-            final int finalIdx = i;
-            TableColumn<PeriodicalStatistic, Integer> column = new TableColumn<>(columnsName.get(i).getName());
-            column.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getValue()));
-            everydayStatisticTable.getColumns().add(column);
-        }
+        dailyDate.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getDate()));
+        personName.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getPerson()));
+        rating.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getValue()));
     }
 
     public void confirmSelection() {
         ObservableList<PeriodicalStatistic> statistic = statisticService.statisticByPeriod(sitesList.getValue(), beginDate.getValue(), endDate.getValue(), personService.getAll());
         everydayStatisticTable.setItems(statistic);
-    }
-
-    public void closeModalWindow() {
-        onExitButtonFromWindow(cancelButton);
     }
 }

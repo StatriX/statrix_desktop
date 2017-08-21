@@ -40,7 +40,7 @@ public class GeneralApp extends Application {
         NavigationMenuController navigationMenuController = loader.getController();
 
         WindowsNavigator.setNavigationMenuController(navigationMenuController);
-        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_STATISTIC);
+        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_COMMON_STATISTIC);
 
         return rootPane;
     }
