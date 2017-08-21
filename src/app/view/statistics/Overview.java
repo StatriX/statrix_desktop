@@ -42,9 +42,6 @@ public class Overview {
             dialogStage.initOwner(((Node) event.getSource()).getScene().getWindow());
             dialogStage.setScene(new Scene(root));
 
-            System.out.println(selectedPersons);
-            System.out.println();
-
             for (String fxmlFileArrayList : dialogStages) {
                 if (fxmlFile.equals(fxmlFileArrayList)) {
                     switch (fxmlFile) {

@@ -70,7 +70,6 @@ public class StatisticController implements ModalWindows, Initializable {
     @FXML
     public void showWindowStatistic(ActionEvent actionEvent) {
         List<Person> selectedPersons = personsTable.getSelectionModel().getSelectedItems();
-//        List<Site> selectedSites = sitesTable.getSelectionModel().getSelectedItems();
         selectedStatisticFile();
         if (selectedPersons.size() != 0) {
             overview.showStatistic(actionEvent, selectedPersons, title, fxmlFile);
