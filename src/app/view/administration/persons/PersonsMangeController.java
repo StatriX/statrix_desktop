@@ -14,7 +14,7 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PersonsMangeController implements ModalWindows, Initializable {
+public class PersonsMangeController implements ModalWindows {
 
     private PersonService personService = new PersonServiceImpl();
 
@@ -24,8 +24,8 @@ public class PersonsMangeController implements ModalWindows, Initializable {
     @FXML
     private TableColumn<Person, String> personName;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    public void initialize() {
         personName.setCellValueFactory( personData -> new SimpleStringProperty(personData.getValue().getName()));
         personTableView.setItems(personService.getAll());
     }

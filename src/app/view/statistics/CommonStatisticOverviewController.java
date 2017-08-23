@@ -2,6 +2,7 @@ package app.view.statistics;
 
 import app.model.GeneralStatistic;
 import app.model.Person;
+import app.model.Site;
 import app.service.*;
 import app.view.confirmation.ManageConfirmation;
 import javafx.collections.ObservableList;
@@ -48,6 +49,10 @@ public class CommonStatisticOverviewController implements ManageConfirmation {
         ObservableList<Person> selectedPersons = personsTableList.getSelectionModel().getSelectedItems();
         if (selectedPersons.size() != 0) {
             commonStatistics.setItems(statisticService.generalStatistic(siteService.getAll(), selectedPersons));
+            for (GeneralStatistic generalStatistic :
+                    statisticService.generalStatistic(siteService.getAll(), selectedPersons)) {
+                System.out.println(generalStatistic.personNameProperty() + " " + generalStatistic.siteNameProperty() + " " + generalStatistic.valueProperty());
+            }
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Внимание!");

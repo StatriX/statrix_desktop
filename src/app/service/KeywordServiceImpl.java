@@ -10,6 +10,7 @@ import javafx.collections.ObservableList;
 import java.util.stream.Collectors;
 
 public class KeywordServiceImpl implements KeywordService {
+
     private KeywordRepository keywordRepository = new InMemoryKeywordRepository();
 
     @Override

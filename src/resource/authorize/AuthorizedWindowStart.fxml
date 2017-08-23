@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0"
+            prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.view.authorize.AuthorizedController">
+    <ImageView fitHeight="77.0" fitWidth="172.0" layoutX="136.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true"
+               AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="10.0">
+        <Image url="@../images/logo/statrix_horizontal_320x109.png"/>
+    </ImageView>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.authorize.AuthorizedController">
-   <children>
-      <ImageView fitHeight="77.0" fitWidth="172.0" layoutX="136.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="10.0">
-         <image>
-            <Image url="@../images/logo/statrix_horizontal_320x109.png" />
-         </image>
-      </ImageView>
-         <Label alignment="CENTER" layoutX="143.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" text="Авторизация" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="80.0">
+    <HBox spacing="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="290.0">
+        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                mnemonicParsing="false" onAction="#startGeneralApp" prefHeight="30.0" prefWidth="100.0" text="Войти">
             <font>
-               <Font name="System Bold" size="22.0" />
+                <Font size="15.0"/>
             </font>
-         </Label>
-         <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="142.0" text="Имя пользователя:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="130.0">
+        </Button>
+        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                mnemonicParsing="false" onAction="#cancelAction" prefHeight="30.0" prefWidth="100.0" text="Отмена">
             <font>
-               <Font name="System Bold" size="15.0" />
+                <Font size="15.0"/>
             </font>
-         </Label>
-         <Label minHeight="-Infinity" prefHeight="20.0" text="Пароль:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="190.0">
-            <font>
-               <Font name="System Bold" size="15.0" />
-            </font>
-         </Label>
-         <TextField focusTraversable="false" layoutX="171.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" promptText="Введите имя пользователя" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0">
-            <font>
-               <Font size="15.0" />
-            </font>
-         </TextField>
-         <PasswordField focusTraversable="false" layoutX="172.0" layoutY="215.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0" promptText="Введите пароль" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="210.0">
-            <font>
-               <Font size="15.0" />
-            </font>
-         </PasswordField>
-         <HBox spacing="50.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="290.0">
-            <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startGeneralApp" prefHeight="30.0" prefWidth="100.0" text="Войти">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelAction" prefHeight="30.0" prefWidth="100.0" text="Отмена">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-            </children>
-         </HBox>
-         <Hyperlink focusTraversable="false" layoutX="343.0" layoutY="265.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#registrationForm" prefHeight="30.0" prefWidth="90.0" text="Регистрация" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">
-            <font>
-               <Font size="14.0" />
-            </font>
-         </Hyperlink>
-   </children>
+        </Button>
+    </HBox>
+    <Label alignment="CENTER" layoutX="143.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" text="Авторизация"
+           AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="80.0">
+        <font>
+            <Font name="System Bold" size="22.0"/>
+        </font>
+    </Label>
+    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0"
+           prefWidth="142.0" text="Имя пользователя:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="130.0">
+        <font>
+            <Font name="System Bold" size="15.0"/>
+        </font>
+    </Label>
+    <Label minHeight="-Infinity" prefHeight="20.0" text="Пароль:" AnchorPane.leftAnchor="20.0"
+           AnchorPane.topAnchor="190.0">
+        <font>
+            <Font name="System Bold" size="15.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="userNameField" layoutX="171.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity"
+               minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0"
+               promptText="Введите имя пользователя" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+               AnchorPane.topAnchor="150.0">
+        <font>
+            <Font size="15.0"/>
+        </font>
+    </TextField>
+    <PasswordField fx:id="password" layoutX="172.0" layoutY="215.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="250.0"
+                   promptText="Введите пароль" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0"
+                   AnchorPane.topAnchor="210.0">
+        <font>
+            <Font size="15.0"/>
+        </font>
+    </PasswordField>
+    <Hyperlink focusTraversable="false" layoutX="343.0" layoutY="265.0" maxHeight="-Infinity" maxWidth="-Infinity"
+               minHeight="-Infinity" minWidth="-Infinity" onAction="#registrationForm" prefHeight="30.0"
+               prefWidth="90.0" text="Регистрация" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="250.0">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Hyperlink>
 </AnchorPane>
