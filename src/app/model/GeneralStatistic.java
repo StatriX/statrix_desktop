@@ -1,55 +1,48 @@
 package app.model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.Comparator;
 
 public class GeneralStatistic implements Comparable<GeneralStatistic> {
-    private String siteName;
-    private String personName;
+    private StringProperty siteName;
+    private StringProperty personName;
+    private IntegerProperty value;
 
-    public GeneralStatistic(String siteName, String personName) {
-        this.siteName = siteName;
-        this.personName = personName;
+    public GeneralStatistic(String siteName, String personName, Integer value) {
+        this.siteName = new SimpleStringProperty(siteName);
+        this.personName = new SimpleStringProperty(personName);
+        this.value = new SimpleIntegerProperty(value);
     }
 
-    public String getSiteName() {
+
+    private String getSiteName() {
+        return siteName.get();
+    }
+
+    public StringProperty siteNameProperty() {
         return siteName;
     }
 
-    public void setSiteName(String siteName) {
-        this.siteName = siteName;
+    private String getPersonName() {
+        return personName.get();
     }
 
-    public String getPersonName() {
+    public StringProperty personNameProperty() {
         return personName;
     }
 
-    public void setPersonName(String personName) {
-        this.personName = personName;
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GeneralStatistic that = (GeneralStatistic) o;
-
-        if (siteName != null ? !siteName.equals(that.siteName) : that.siteName != null) return false;
-        return personName != null ? personName.equals(that.personName) : that.personName == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = siteName != null ? siteName.hashCode() : 0;
-        result = 31 * result + (personName != null ? personName.hashCode() : 0);
-        return result;
+    public IntegerProperty valueProperty() {
+        return value;
     }
 
     @Override
     public int compareTo(GeneralStatistic o) {
-        return Comparator.comparing(GeneralStatistic::getSiteName)
-                .thenComparing(GeneralStatistic::getPersonName)
+        return Comparator.comparing(GeneralStatistic::getPersonName)
+                .thenComparing(GeneralStatistic::getSiteName)
                 .compare(this, o);
 
     }

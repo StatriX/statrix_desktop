@@ -4,6 +4,7 @@
 }
 
 #selectedAdministration_focus {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
 }
 
@@ -12,22 +13,25 @@
     -fx-region-background: null;
 }
 
-#statisticButton:focused {
+#statisticButton_focus {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-underline: true;
+    -fx-region-background: null;
 }
 
 #exitButton {
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
     -fx-region-background: null;
 }
 
 #buttonMenu {
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
     -fx-region-background: null;
 }
 
-#buttonMenu:focused {
+#buttonMenu_focus {
+    -fx-font-size: 14px;
+    -fx-region-background: null;
     -fx-font-weight: bold;
     -fx-underline: true;
 }

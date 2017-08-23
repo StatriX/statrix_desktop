@@ -8,7 +8,8 @@ import java.io.IOException;
 public class WindowsNavigator {
 
     public static final String NAVIGATION_MENU = "/navigation/NavigationMenu.fxml";
-    public static final String WINDOW_STATISTIC = "/statistics/Statistic.fxml";
+    public static final String WINDOW_COMMON_STATISTIC = "/statistics/CommonStatistic.fxml";
+    public static final String WINDOW_EVERYDAY_STATISTIC = "/statistics/EverydayStatistic.fxml";
     public static final String WINDOW_ADMINISTRATION_PERSONS = "/administration/persons/PersonsMange.fxml";
     public static final String WINDOW_ADMINISTRATION_SITES = "/administration/sites/SitesManage.fxml";
     public static final String WINDOW_ADMINISTRATION_USERS = "/administration/users/UsersManage.fxml";

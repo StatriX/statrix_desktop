@@ -1,9 +1,11 @@
 package app.model;
 
+import javafx.beans.property.*;
+
 public abstract class CommonDirectory {
     private Integer id;
-    private String name;
-    private boolean defDirectory;
+    private StringProperty name;
+    private BooleanProperty defDirectory;
 
     public CommonDirectory() {
 
@@ -11,8 +13,8 @@ public abstract class CommonDirectory {
 
     CommonDirectory(Integer id, String name, boolean defDirectory) {
         this.id = id;
-        this.name = name;
-        this.defDirectory = defDirectory;
+        this.name = new SimpleStringProperty(name);
+        this.defDirectory = new SimpleBooleanProperty(defDirectory);
     }
 
     public Integer getId() {
@@ -24,19 +26,27 @@ public abstract class CommonDirectory {
     }
 
     public String getName() {
-        return name;
+        return name.get();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
-    public boolean isDefDirectory() {
-        return defDirectory;
+    public StringProperty nameProperty() {
+        return name;
+    }
+
+    public boolean getDefDirectory() {
+        return defDirectory.get();
     }
 
     public void setDefDirectory(boolean defDirectory) {
-        this.defDirectory = defDirectory;
+        this.defDirectory.set(defDirectory);
+    }
+
+    public BooleanProperty defDirectoryProperty() {
+        return defDirectory;
     }
 
     public boolean isNew() {

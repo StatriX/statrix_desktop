@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainApp extends Application {
+public class GeneralApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -40,7 +40,7 @@ public class MainApp extends Application {
         NavigationMenuController navigationMenuController = loader.getController();
 
         WindowsNavigator.setNavigationMenuController(navigationMenuController);
-        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_STATISTIC);
+        WindowsNavigator.loadWindowScene(WindowsNavigator.WINDOW_COMMON_STATISTIC);
 
         return rootPane;
     }
@@ -48,9 +48,5 @@ public class MainApp extends Application {
     private Scene createScene(Pane rootPane) {
 
         return new Scene(rootPane);
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

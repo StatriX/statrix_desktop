@@ -77,36 +77,30 @@ public class SimpleTestForLogic {
         System.out.println(userService.getAll());
 
         //test Statistic general;
-        System.out.println();
-        System.out.println("---test generalStatistic");
-        System.out.print("-print full statistics: \n");
-
-        List<String> tempSiteNameList = siteService.getAll()
-                .stream()
-                .map( s -> s.getName())
-                .collect(Collectors.toList());
-
-        List<String> tempPersonNameList = personService.getAll()
-                .stream()
-                .map( p -> p.getName())
-                .collect(Collectors.toList());
-
-        Map<GeneralStatistic, Integer> tempStatisticService = statisticService.generalStatistic(tempSiteNameList, tempPersonNameList);
-
-        for (Map.Entry<GeneralStatistic, Integer> tempMap : tempStatisticService.entrySet()) {
-            System.out.println(tempMap.getKey().getSiteName() + " " + tempMap.getKey().getPersonName() + " " + tempMap.getValue());
-        }
+//        System.out.println();
+//        System.out.println("---test generalStatistic");
+//        System.out.print("-print full statistics: \n");
+//
+//        List<Site> tempSiteNameList = siteService.getAll();
+//
+//        List<Person> tempPersonNameList = personService.getAll();
+//
+//        Map<GeneralStatistic, Integer> tempStatisticService = statisticService.generalStatistic(tempSiteNameList, tempPersonNameList);
+//
+//        for (Map.Entry<GeneralStatistic, Integer> tempMap : tempStatisticService.entrySet()) {
+//            System.out.println(tempMap.getKey().getSiteName() + " " + tempMap.getKey().getPersonName() + " " + tempMap.getValue());
+//        }
 
 
         // test statistic by period1
-        System.out.println();
-        System.out.println("---test periodical Statistic");
-        System.out.print("-print periodical statistics: \n");
-        Map<PeriodicalStatistic, Integer> periodicalStatisticIntegerMap = statisticService.statisticByPeriod(tempSiteNameList.get(0), LocalDate.of(2017, 07, 01), LocalDate.of(2017, 07, 31), tempPersonNameList);
-
-        for (Map.Entry<PeriodicalStatistic, Integer> tempMap : periodicalStatisticIntegerMap.entrySet()) {
-            System.out.println(tempMap.getKey().getDate() + " " + tempMap.getKey().getPerson() + " " + tempMap.getValue());
-        }
+//        System.out.println();
+//        System.out.println("---test periodical Statistic");
+//        System.out.print("-print periodical statistics: \n");
+//        Map<PeriodicalStatistic, Integer> periodicalStatisticIntegerMap = statisticService.statisticByPeriod(tempSiteNameList.get(0).getName(), LocalDate.of(2017, 07, 01), LocalDate.of(2017, 07, 31), tempPersonNameList);
+//
+//        for (Map.Entry<PeriodicalStatistic, Integer> tempMap : periodicalStatisticIntegerMap.entrySet()) {
+//            System.out.println(tempMap.getKey().getDate() + " " + tempMap.getKey().getPerson() + " " + tempMap.getValue());
+//        }
 
     }
 
